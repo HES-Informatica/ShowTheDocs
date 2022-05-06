@@ -13,7 +13,7 @@
     "content": [
         {
             "id": "intro",
-            "icon": "fas fa-paper",
+            "icon": "fas fa-file",
             "title": "Introdução",
             "date": "05/05/2022",
             "contentfile": "README.md"
