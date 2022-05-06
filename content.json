@@ -1,0 +1,22 @@
+{
+    "title": "Show The Docs!",
+    "description": "Gerador de Documentação Automática",
+    "social": [
+        {
+            "name": "Github",
+            "icon": "fa fa-github",
+            "url": "http://github.com/zonaro"
+        }
+    ],
+    "logo": "http://picsum.photos/100/50",
+    "downloadbutton": "http://github.com/zonaro/ShowTheDocs",
+    "content": [
+        {
+            "id": "intro",
+            "icon": "fas fa-paper",
+            "title": "Introdução",
+            "date": "05/05/2022",
+            "contentfile": "readme.md"
+        }
+    ]
+}
