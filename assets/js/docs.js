@@ -115,34 +115,35 @@ const main = (async function () {
 		json.title = marked.parseInline(json.title || "");
 	}
 
-	for (let index = 0; index < json.content.length; index++) {
-		let item = json.content[index];
+	if (json.content)
+		for (let index = 0; index < json.content.length; index++) {
+			let item = json.content[index];
 
-		if (item.contentfile) {
-			item.content = await getText(item.contentfile, item.content);
+			if (item.contentfile) {
+				item.content = await getText(item.contentfile, item.content);
+			}
+
+			if (item.content)
+				item.content = marked.parse(item.content || "");
+
+
+			if (item.aftercontentfile) {
+				item.aftercontent = await getText(item.aftercontentfile, item.aftercontent);
+			}
+
+			if (item.aftercontent)
+				item.aftercontent = marked.parse(item.aftercontent || "");
+
+			if (item.warning)
+				item.warning = marked.parse(item.warning || "");
+
+			if (item.info)
+				item.info = marked.parse(item.info || "");
+
+			if (item.danger)
+				item.danger = marked.parse(item.danger || "");
+
 		}
-
-		if (item.content)
-			item.content = marked.parse(item.content || "");
-
-
-		if (item.aftercontentfile) {
-			item.aftercontent = await getText(item.aftercontentfile, item.aftercontent);
-		}
-
-		if (item.aftercontent)
-			item.aftercontent = marked.parse(item.aftercontent || "");
-
-		if (item.warning)
-			item.warning = marked.parse(item.warning || "");
-
-		if (item.info)
-			item.info = marked.parse(item.info || "");
-
-		if (item.danger)
-			item.danger = marked.parse(item.danger || "");
-
-	}
 
 	const app = Vue.createApp({
 		mounted: function () {
