@@ -104,7 +104,7 @@ const main = (async function () {
 	if (window.basePath) {
 	} else {
 		console.error('Documentation path not specified');
-		window.basePath = 'content.json';
+		window.basePath = '';
 	}
 
 	console.log('Documentation Orign', window.basePath);
