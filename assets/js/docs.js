@@ -11,6 +11,7 @@ String.prototype.ifBlank = function (e) { return `${this}`.isBlank() ? e || "" :
 
 async function getJson(url) {
 	try {
+		console.log('Getting', url);
 		return await fetch(url, { mode: 'cors' }).then(async (response) => await response.json().then(async (json) => await json || {}));
 	} catch (error) {
 		return { 'error': error }
@@ -19,6 +20,7 @@ async function getJson(url) {
 
 
 async function getText(url, alternateText) {
+	console.log('Getting', url);
 	return await fetch(url, { mode: 'cors' }).then(async (response) => await response.text().then(async (txt) => await txt.ifBlank(alternateText) || ""));
 }
 
