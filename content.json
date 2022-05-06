@@ -12,11 +12,18 @@
     "downloadbutton": "http://github.com/zonaro/ShowTheDocs",
     "content": [
         {
-            "id": "intro",
+            "id": "1",
             "icon": "fas fa-file",
-            "title": "Introdução",
+            "title": "ShowtTheDocs",
             "date": "05/05/2022",
             "contentfile": "README.md"
+        },
+        {
+            "id": "1.1",
+            "icon": "fas fa-paper-plane",
+            "title": "Getting Started",
+            "date": "05/05/2022",
+            "content": "soon..."
         }
     ]
 }
