@@ -101,12 +101,13 @@ window.onresize = function () {
 /* ===== MAIN  ====== */
 const main = (async function () {
 
+
 	window.basePath = getParam('basePath');
 
-	if (window.basePath) {
-	} else {
-		console.error('Documentation path not specified');
-		window.basePath = '';
+	if (window.basePath == undefined) {
+
+		console.warn('Documentation path not specified');
+		window.basePath = location.pathname;
 	}
 
 	console.log('Documentation Orign', window.basePath);
