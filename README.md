@@ -1,2 +1,1 @@
-# ShowTheDocs
 FlatFile Documentation Generator
