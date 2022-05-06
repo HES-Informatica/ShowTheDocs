@@ -109,7 +109,7 @@ const main = (async function () {
 
 	console.log('Documentation Orign', window.basePath);
 
-	var json = await getJson(window.basePath + 'content.json');
+	var json = await getJson(window.basePath + '/content.json');
 
 	console.log('Documentation Data', json);
 
