@@ -41,7 +41,6 @@ function stringTemplateParser(expression, valueObj) {
 	return text
 }
 
-window.basePath = getParam('basePath');
 
 window.search = function (filter, keep) {
 
@@ -100,9 +99,11 @@ window.onresize = function () {
 /* ===== MAIN  ====== */
 const main = (async function () {
 
+	window.basePath = getParam('basePath');
+
 	if (window.basePath) {
-		console.error('Documentation path not specified');
 	} else {
+		console.error('Documentation path not specified');
 		window.basePath = 'content.json';
 	}
 
