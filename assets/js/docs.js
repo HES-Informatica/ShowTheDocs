@@ -111,6 +111,8 @@ const main = (async function () {
 
 	var json = await getJson(window.basePath);
 
+	console.log('Documentation Data', json);
+
 	if (json.title) {
 		json.title = marked.parseInline(json.title || "");
 	}
