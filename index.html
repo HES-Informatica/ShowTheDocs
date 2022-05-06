@@ -9,7 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta name="description" content="Manual do aplicativo">
+	<meta name="description" content="Manual do Aplicativo">
 	<meta name="author" content="H&S Technologies, Zonaro">
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -55,7 +55,7 @@
 					<div class="docs-top-utilities d-flex justify-content-end align-items-center">
 						<div class="top-search-box d-none d-lg-flex">
 							<form class="search-form">
-								<input type="text" placeholder="Buscar na documentação" id="navbar-search" name="search"
+								<input type="text" :placeholder="data.searchplaceholder || 'Search'" id="navbar-search" name="search"
 									class="form-control search-input">
 								<button type="submit" class="btn search-btn" value="Pesquisar"><i
 										class="fas fa-search"></i></button>
@@ -85,7 +85,7 @@
 			<div id="docs-sidebar" class="docs-sidebar">
 				<div class="top-search-box d-lg-none p-3">
 					<form class="search-form">
-						<input type="text" placeholder="Buscar na documentação" id="sidebar-search" name="search"
+						<input type="text" :placeholder="data.searchplaceholder || 'Search'" id="sidebar-search" name="search"
 							class="form-control search-input">
 						<button type="submit" class="btn search-btn" value="Pesquisar"><i
 								class="fas fa-search"></i></button>
