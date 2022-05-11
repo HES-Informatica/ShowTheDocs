@@ -7,7 +7,11 @@ content.json
 {
     "title": "Show The Docs!",
     "description": "FlatFile Documentation Generator",
-    "searchplaceholder": "Find me :)", // the placeholder text used for searchbox on top navbar. Default is search
+    "searchplaceholder": "Find me :)", // the placeholder text used for searchbox on top navbar. Default is "search"
+    "favicon":"https://place-hold.it/100x100?text=STD", // absolute path to your favicon
+    "author":"Your Name",
+    "logo": "https://place-hold.it/200x100?text=ShowTheDocs", // absolute path to your logo
+    "downloadbutton": "http://github.com/zonaro/ShowTheDocs", //ommit if you want to hide download button
     "datelabel": "Updated", // the text used before any article date. Default is empty
     "infolabel": "Info", // the text used as label on any info alert. Default is "Info"
     "warninglabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
@@ -15,16 +19,14 @@ content.json
     "social": [ // generate top navbar and footer icons with links
         {
             "name": "Github",
-            "icon": "fa fa-github", // any fontAwesome 6 Icon
+            "icon": "fa fa-github", // any fontAwesome 6 FREE Icon
             "url": "http://github.com/zonaro"
         }
     ],
-    "logo": "https://place-hold.it/200x100?text=ShowTheDocs", // absolute path to your logo
-    "downloadbutton": "http://github.com/zonaro/ShowTheDocs", //ommit if you want to hide download button
     "content": [
         {
             "id": "1", // needs to be unique. its also defines the hierarchy of articles
-            "icon": "fas fa-file", // any fontAwesome 6 Icon
+            "icon": "fas fa-file", // any fontAwesome 6 FREE Icon
             "title": "Introduction", // article title
             "date": "05/05/2022",
             "contentfile": "https://raw.githubusercontent.com/yourusername/yourrepo/main/README.md", //needs to be absolute

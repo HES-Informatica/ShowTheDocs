@@ -5,7 +5,7 @@ const sass = new Sass();
 
 window.location.query = new URLSearchParams(window.location.search);
 
-String.prototype.isBlank = function () { return  `${this}`.trim() == ""; }
+String.prototype.isBlank = function () { return `${this}`.trim() == ""; }
 
 String.prototype.ifBlank = function (e) { return `${this}`.isBlank() ? (e || "") : `${this}`; }
 
@@ -113,11 +113,24 @@ const main = (async function () {
 	console.log('Documentation Orign', window.basePath);
 
 	var json = await getJson(window.basePath);
-
 	console.log('Documentation Data', json);
 
 	if (json.title) {
 		json.title = marked.parseInline(json.title || "");
+		document.getElementsByTagName("title")[0].textContent = json.title;
+		window.title = json.title;
+	}
+
+	if (json.author) {
+		document.getElementById("author").setAttribute("content", json.author);
+	}
+
+	if (json.description) {
+		document.getElementById("description").setAttribute("content", json.description);
+	}	 
+
+	if (json.favicon) {
+		document.getElementById("favicon").setAttribute("href", json.favicon);
 	}
 
 	if (json.content)
@@ -150,6 +163,8 @@ const main = (async function () {
 
 		}
 
+	window.documentationData = json;
+
 	const app = Vue.createApp({
 		mounted: function () {
 			this.$nextTick(function () {
@@ -173,9 +188,9 @@ const main = (async function () {
 				responsiveSidebar();
 
 				hljs.initHighlighting();
-				
+
 				if (document.querySelectorAll("#docs-nav a").length > 0) {
-					  window.spy = new Gumshoe('#docs-nav a', {
+					window.spy = new Gumshoe('#docs-nav a', {
 						offset: 69 //sticky header height
 					});
 				}
