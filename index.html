@@ -25,13 +25,26 @@
 
 	<!-- Theme CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+	<style>
+		@media print {
+
+			.no-print,
+			.no-print * {
+				display: none !important;
+			}
+
+			article {
+				page-break-after: always;
+			}
+		}
+	</style>
 
 </head>
 
 <body>
 
 	<div class="docs-page" id="app">
-		<header class="header fixed-top">
+		<header class="header fixed-top no-print">
 			<div class="branding docs-branding">
 				<div class="container-fluid position-relative py-2">
 					<div class="docs-logo-wrapper">
