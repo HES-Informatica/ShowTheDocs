@@ -127,7 +127,7 @@ const main = (async function () {
 
 	if (json.description) {
 		document.getElementById("description").setAttribute("content", json.description);
-	}	 
+	}
 
 	if (json.favicon) {
 		document.getElementById("favicon").setAttribute("href", json.favicon);
@@ -165,7 +165,7 @@ const main = (async function () {
 
 	window.documentationData = json;
 
-	const app = Vue.createApp({
+	window.vueApp = Vue.createApp({
 		mounted: function () {
 			this.$nextTick(function () {
 
@@ -177,11 +177,9 @@ const main = (async function () {
 					x.addEventListener('submit', function (event) {
 						event.preventDefault();
 						window.search(x.children[0].value, false);
-						window.find(x.children[0].value, false, `${e.code}` == 'ControlLeft' || `${e.code}` == 'ControlRight', true, false, true, true)
-
-
-					})
-				})
+						window.find(x.children[0].value, false, `${e.code}` == 'ControlLeft' || `${e.code}` == 'ControlRight', true, false, true, true);
+					});
+				});
 
 				var sidebar = document.getElementById('docs-sidebar');
 
@@ -240,6 +238,7 @@ const main = (async function () {
 					}
 				});
 
+				document.getElementsByClassName("loading")[0].remove();
 			})
 		},
 		methods: {
@@ -266,8 +265,8 @@ const main = (async function () {
 			return { data: json };
 		}
 	});
-	app.mount('#app')
-	return app;
+	window.vueApp.mount('#app')
+	return window.vueApp;
 })();
 
 
