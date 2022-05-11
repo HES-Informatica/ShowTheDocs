@@ -30,7 +30,7 @@
             "icon": "fas fa-share",
             "title": "Generate a documentation",          
             "content": "Now just go to http://zonaro.github.io/ShowTheDocs/?basePath=https://raw.githubusercontent.com/yourusername/yourrepo/main/content.json",
-            "aftercontent":"Pass your repo in basePath parameter"
+            "aftercontent":"Pass your content.json in basePath parameter"
         }
     ]
 }
