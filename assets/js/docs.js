@@ -5,9 +5,9 @@ const sass = new Sass();
 
 window.location.query = new URLSearchParams(window.location.search);
 
-String.prototype.isBlank = function () { return `${this}`.trim() == ""; }
+String.prototype.isBlank = function () { return  `${this}`.trim() == ""; }
 
-String.prototype.ifBlank = function (e) { return `${this}`.isBlank() ? e || "" : `${this}`; }
+String.prototype.ifBlank = function (e) { return `${this}`.isBlank() ? (e || "") : `${this}`; }
 
 async function getJson(url) {
 	try {
