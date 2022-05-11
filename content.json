@@ -24,6 +24,13 @@
             "title": "Getting Started",
             "date": "05/05/2022",
             "contentfile": "getting_started.md"
+        },
+        {
+            "id": "1.2",
+            "icon": "fas fa-share",
+            "title": "Generate a documentation",          
+            "content": "Now just go to http://zonaro.github.io/ShowTheDocs/?basePath=https://raw.githubusercontent.com/yourusername/yourrepo/main/content.json",
+            "aftercontent":"Pass your repo in basePath parameter"
         }
     ]
 }

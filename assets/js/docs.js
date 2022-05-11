@@ -107,12 +107,12 @@ const main = (async function () {
 	if (window.basePath == undefined) {
 
 		console.warn('Documentation path not specified');
-		window.basePath = location.pathname;
+		window.basePath = location.pathname + '/content.json';
 	}
 
 	console.log('Documentation Orign', window.basePath);
 
-	var json = await getJson(window.basePath + '/content.json');
+	var json = await getJson(window.basePath);
 
 	console.log('Documentation Data', json);
 
