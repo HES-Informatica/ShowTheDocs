@@ -238,7 +238,7 @@ const main = (async function () {
 					}
 				});
 
-				document.getElementsByClassName("loading")[0].remove();
+				document.getElementsByClassName("loadingio-spinner-eclipse-jxj4whxfvsh")[0].remove();
 			})
 		},
 		methods: {
