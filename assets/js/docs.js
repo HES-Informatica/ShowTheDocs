@@ -171,10 +171,11 @@ const main = (async function () {
 				var sidebar = document.getElementById('docs-sidebar');
 
 				responsiveSidebar();
-
-				const spy = new Gumshoe('#docs-nav a', {
-					offset: 69 //sticky header height
-				});
+				if (document.querySelectorAll("#docs-nav a").length > 0) {
+					  window.spy = new Gumshoe('#docs-nav a', {
+						offset: 69 //sticky header height
+					});
+				}
 
 				/* ===== Smooth scrolling ====== */
 				/*  Note: You need to include smoothscroll.min.js (smooth scroll behavior polyfill) on the page to cover some browsers */
