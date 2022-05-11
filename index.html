@@ -123,7 +123,7 @@
 								<i style="margin-right:15px" v-if="item.icon" class="text-primary" :class="item.icon"></i>
 								<span  v-if="item.title" v-html="item.title"></span>
 							</component>
-							<small  v-if="item.date && item.date != ''">Atualizado em: {{item.date}}
+							<small  v-if="item.date && item.date != ''">{{data.datelabel}}: {{item.date}}
 								<br/>
 								<br/>
 							</small>
@@ -152,7 +152,7 @@
 											<i class="fa fa-solid fa-circle-xmark"></i>
 										</span>
 										<!--//icon-holder-->
-										Atenção
+										{{data.dangerlabel || 'Danger'}}
 									</h4>
 									<p v-html="item.danger"></p>
 								</div>
@@ -167,7 +167,7 @@
 											<i class="fas fa-exclamation-triangle"></i>
 										</span>
 										<!--//icon-holder-->
-										Atenção
+										{{data.warninglabel || 'Warning'}}
 									</h4>
 									<p v-html="item.warning"></p>
 								</div>
@@ -181,7 +181,7 @@
 											<i class="fas fa-circle-info"></i>
 										</span>
 										<!--//icon-holder-->
-										Observação:
+										{{data.infolabel || 'Info'}}
 									</h4>
 									<p v-html="item.info"></p>
 								</div>

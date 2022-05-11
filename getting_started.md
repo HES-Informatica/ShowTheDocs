@@ -10,6 +10,10 @@ content.json
     "title": "Show The Docs!",
     "description": "FlatFile Documentation Generator",
     "searchplaceholder": "Find me :)", // the placeholder text used for searchbox on top navbar. Default is search
+    "datelabel": "Updated", // the text used before any article date. Default is empty
+    "infolabel": "Info", // the text used as label on any info alert. Default is "Info"
+    "warninglabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
+    "dangerlabel": "Danger", // the text used as label on any danger alert. Default is "Danger"
     "social": [ // generate top navbar and footer icons with links
         {
             "name": "Github",
