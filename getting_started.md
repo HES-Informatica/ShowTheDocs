@@ -3,9 +3,7 @@ Generate documentation using ShowTheDocs! it's pretty easy. Consider the followi
 
 
 content.json
-```json
-
- 
+```json 
 {
     "title": "Show The Docs!",
     "description": "FlatFile Documentation Generator",
