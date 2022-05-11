@@ -7,11 +7,11 @@ content.json
 {
     "title": "Show The Docs!",
     "description": "FlatFile Documentation Generator",
-    "searchplaceholder": "Find me :)", // the placeholder text used for searchbox on top navbar. Default is "search"
     "favicon":"https://place-hold.it/100x100?text=STD", // absolute path to your favicon
     "author":"Your Name",
     "logo": "https://place-hold.it/200x100?text=ShowTheDocs", // absolute path to your logo
     "downloadbutton": "http://github.com/zonaro/ShowTheDocs", //ommit if you want to hide download button
+    "searchplaceholder": "Find me :)", // the placeholder text used for searchbox on top navbar. Default is "search"
     "datelabel": "Updated", // the text used before any article date. Default is empty
     "infolabel": "Info", // the text used as label on any info alert. Default is "Info"
     "warninglabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
