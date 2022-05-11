@@ -171,6 +171,8 @@ const main = (async function () {
 				var sidebar = document.getElementById('docs-sidebar');
 
 				responsiveSidebar();
+
+				hljs.initHighlighting();
 				
 				if (document.querySelectorAll("#docs-nav a").length > 0) {
 					  window.spy = new Gumshoe('#docs-nav a', {
