@@ -1,6 +1,6 @@
 {
     "title": "Show The Docs!",
-    "description": "FlatFile documentation generator",
+    "description": "FlatFile Documentation Generator",
     "social": [
         {
             "name": "Github",
@@ -14,7 +14,7 @@
         {
             "id": "1",
             "icon": "fas fa-file",
-            "title": "ShowtTheDocs",
+            "title": "Show The Docs",
             "date": "05/05/2022",
             "contentfile": "README.md"
         },
@@ -23,7 +23,7 @@
             "icon": "fas fa-paper-plane",
             "title": "Getting Started",
             "date": "05/05/2022",
-            "content": "soon..."
+            "contentfile": "getting_started.md"
         }
     ]
 }
