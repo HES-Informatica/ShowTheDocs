@@ -124,7 +124,7 @@ const main = (async function () {
 	if (json.color) {
 		var maincolor = document.createElement("style");
 		maincolor.textContent = ":root{--bs-primary:" + json.color + "!important;}";
-		document.getElementsByName("head")[0].appendChild(maincolor);
+		document.querySelector("head").appendChild(maincolor);
 		console.log("color found", maincolor)
 	}
 
