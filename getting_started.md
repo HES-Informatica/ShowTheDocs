@@ -8,6 +8,7 @@ content.json
     "title": "Show The Docs!",
     "description": "FlatFile Documentation Generator",
     "favicon":"https://place-hold.it/100x100?text=STD", // absolute path to your favicon
+    "color":"#FFFF00", // CSS color. Used as accent color. Default is orange
     "author":"Your Name",
     "logo": "https://place-hold.it/200x100?text=ShowTheDocs", // absolute path to your logo
     "downloadbutton": "http://github.com/zonaro/ShowTheDocs", //ommit if you want to hide download button
@@ -49,7 +50,7 @@ content.json
         },
         {
             "id": "1.1.1", // set the id with sublevels to indicate that this article belongs to the previous article         
-            "title": "Sublevel 1.1"  
+            "title": "Sublevel 1.1.1"  
         },  
         {
             "id": "2", // set the id with sublevels to indicate that this article belongs to the previous article         
