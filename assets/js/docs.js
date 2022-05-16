@@ -121,6 +121,12 @@ const main = (async function () {
 		window.title = json.title;
 	}
 
+	if (json.color) {
+		var maincolor = document.createElement("style");
+		maincolor.textContent = ":root{--bs-primary:" + json.color + "!important;}";
+		document.getElementsByName("head")[0].appendChild(maincolor);
+	}
+
 	if (json.author) {
 		document.getElementById("author").setAttribute("content", json.author);
 	}

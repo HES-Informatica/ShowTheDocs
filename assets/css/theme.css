@@ -11066,7 +11066,7 @@ a.text-link:hover {
   padding-top: 2px;
 }
 .social-list li a {
-  color: #0162c1;
+  color: var(--bs-primary);
 }
 .social-list li a:hover {
   color: var(--bs-primary);

@@ -50,11 +50,7 @@
 
 		
 	</style>
-<style id="maincolor">
-	:root{
-		--bs-primary: rgb(1, 72, 142)!important;
-	}
-</style>
+ 
 </head>
 
 <body>
@@ -152,7 +148,7 @@
 
 						<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
 							<li v-if="data.social" v-for="soc in data.social" class="list-inline-item"><a
-									:href="soc.url" title="soc.name"><i :class="soc.icon" class="fa-fw"></i></a></li>
+									:href="soc.url" :title="soc.name"><i :class="soc.icon" class="fa-fw"></i></a></li>
 
 
 						</ul>
@@ -296,7 +292,7 @@
 
 				<ul class="social-list list-unstyled pb-4 mb-0">
 					<li v-if="data.social" v-for="soc in data.social" class="list-inline-item"><a :href="soc.url"><i
-								:class="soc.icon" class="  fa-fw"></i></a></li>
+								:class="soc.icon" :title="soc.name" class="fa-fw"></i></a></li>
 				</ul>
 				<!--//social-list-->
 
