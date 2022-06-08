@@ -78,8 +78,8 @@
 
 						</ul>
 						<!--//social-list-->
-						<a v-if="data.downloadbutton" :href="data.downloadbutton"
-							class="btn btn-primary d-none d-lg-flex">Download</a>
+						<a v-if="data.printbutton" href="javascript:window.print();" class="btn btn-secondary d-none d-lg-flex">{{data.printbutton}}</a>
+						<a v-if="data.downloadbutton" :href="data.downloadbutton" class="btn btn-primary d-none d-lg-flex">Download</a>
 					</div>
 					<!--//docs-top-utilities-->
 				</div>
