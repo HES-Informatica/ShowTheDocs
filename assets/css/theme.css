@@ -12523,7 +12523,7 @@ a.text-link:hover {
   z-index: 10;
 }
 
- 
+
 
 /* We occasionally use media queries that go in the other direction */
 @media (max-width: 767.98px) {
@@ -12565,8 +12565,14 @@ a.text-link:hover {
     page-break-after: always;
   }
 
+
+  .img-print {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+
   figure img {
-    width: 250px!important;
+    width: 250px !important;
   }
 
 }
@@ -12611,7 +12617,7 @@ a.text-link:hover {
   position: relative;
   transform: translateZ(0) scale(1);
   backface-visibility: hidden;
-  transform-origin: 0 0; 
+  transform-origin: 0 0;
 }
 
 .ldio-io61y66zdh div {

@@ -146,7 +146,7 @@
 							<p v-html="item.content"></p>
 
 							<figure :class="'simplelightbox-gallery-' + fixId(item.id)" class="row mb-3">
-								<div class="col-12 col-md-4 mb-3" v-if="item.lightbox" v-for="img in item.lightbox">
+								<div class="col-12 col-md-4 mb-3 img-print" v-if="item.lightbox" v-for="img in item.lightbox">
 									<a v-bind:href="img.image">
 										<img class="figure-img img-fluid shadow rounded print-app"
 											v-bind:src="img.image" alt="" v-bind:title="img.title" />
