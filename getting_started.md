@@ -5,6 +5,7 @@ Generate documentation using ShowTheDocs! it's pretty easy. Consider the followi
 content.json
 ```json 
 {
+    "language":"pt-BR"
     "title": "Show The Docs!",
     "description": "FlatFile Documentation Generator",
     "favicon":"https://place-hold.it/100x100?text=STD", // absolute path to your favicon

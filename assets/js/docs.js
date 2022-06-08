@@ -115,9 +115,14 @@ const main = (async function () {
 	var json = await getJson(window.basePath);
 	console.log('Documentation Data', json);
 
+
+	if (json.language) {
+		document.querySelector("html").setAttribute("lang",json.language)
+	}
+
 	if (json.title) {
 		json.title = marked.parseInline(json.title || "");
-		document.getElementsByTagName("title")[0].textContent = json.title;
+		document.querySelector("title").textContent = json.title;
 		window.title = json.title;
 	}
 
