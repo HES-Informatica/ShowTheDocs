@@ -12523,12 +12523,7 @@ a.text-link:hover {
   z-index: 10;
 }
 
-/* printing  */
-@media print {
-  #docs-sidebar {
-    display: none !important;
-  }
-}
+ 
 
 /* We occasionally use media queries that go in the other direction */
 @media (max-width: 767.98px) {
@@ -12553,7 +12548,13 @@ a.text-link:hover {
   }
 }
 
+/* printing  */
+
 @media print {
+
+  #docs-sidebar {
+    display: none !important;
+  }
 
   .no-print,
   .no-print * {
