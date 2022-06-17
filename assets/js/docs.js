@@ -34,6 +34,27 @@ function getParam(name) {
 	return window.location.query.get(name);
 }
 
+function getParams (url = window.location) {
+
+	// Create a params object
+	let params = {};
+
+	new URL(url).searchParams.forEach(function (val, key) {
+		if (params[key] !== undefined) {
+			if (!Array.isArray(params[key])) {
+				params[key] = [params[key]];
+			}
+			params[key].push(val);
+		} else {
+			params[key] = val;
+		}
+	});
+
+	return params;
+
+}
+
+
 function stringTemplateParser(expression, valueObj) {
 	const templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
 	let text = expression.replace(templateMatcher, (substring, value, index) => {
@@ -45,10 +66,11 @@ function stringTemplateParser(expression, valueObj) {
 
 
 function stringTemplateParserQuery(expression) {
-	let arr = window.location.query.keys();
-	for (let index = 0; index < arr.length; index++) {	 
-		expression = stringTemplateParser(expression, getParam(arr[index]));
-	}
+	// let arr = window.location.query.keys();
+	// var items = getParams();
+	// for (let index = 0; index < arr.length; index++) {	 
+	// 	expression = stringTemplateParser(expression, getParam(arr[index]));
+	// }
 	return expression;
 }
 
