@@ -55,21 +55,20 @@ function getParams(url = window.location) {
 }
 
 
- 
+
 
 
 function stringTemplateParserQuery(expression) {
 	const templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
 	let items = getParams();
 	let arr = Object.keys(items);
-	for (let index = 0; index < arr.length; index++) {
-		let text = expression.replace(templateMatcher, (substring, value, index) => {
-			value = arr[value];
-			return value;
-		});
-		return text
-	}
-	return expression;
+	let text = expression.replace(templateMatcher, (substring, value, index) => {
+		const vv = items[value];
+		value = vv || "";
+		return value;
+	});
+	return text;
+	 
 }
 
 
