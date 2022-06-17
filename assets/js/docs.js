@@ -21,7 +21,7 @@ async function getJson(url) {
 
 async function getText(url, alternateText) {
 	console.log('Getting', url);
-	return await fetch(url, { mode: 'cors' }).then(async (response) => await response.text().then(async (txt) =>  await  txt.ifBlank(alternateText) || ""));
+	return await fetch(url, { mode: 'cors' }).then(async (response) => await response.text().then(async (txt) => await txt.ifBlank(alternateText) || ""));
 }
 
 function parseHTML(html) {
@@ -34,7 +34,7 @@ function getParam(name) {
 	return window.location.query.get(name);
 }
 
-function getParams (url = window.location) {
+function getParams(url = window.location) {
 
 	// Create a params object
 	let params = {};
@@ -55,22 +55,20 @@ function getParams (url = window.location) {
 }
 
 
-function stringTemplateParser(expression, valueObj) {
-	const templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
-	let text = expression.replace(templateMatcher, (substring, value, index) => {
-		value = valueObj[value];
-		return value;
-	});
-	return text
-}
+ 
 
 
 function stringTemplateParserQuery(expression) {
-	// let arr = window.location.query.keys();
-	// var items = getParams();
-	// for (let index = 0; index < arr.length; index++) {	 
-	// 	expression = stringTemplateParser(expression, getParam(arr[index]));
-	// }
+	const templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
+	let items = getParams();
+	let arr = Object.keys(items);
+	for (let index = 0; index < arr.length; index++) {
+		let text = expression.replace(templateMatcher, (substring, value, index) => {
+			value = arr[value];
+			return value;
+		});
+		return text
+	}
 	return expression;
 }
 
@@ -131,7 +129,7 @@ window.onresize = function () {
 	responsiveSidebar();
 };
 
- 
+
 
 /* ===== MAIN  ====== */
 const main = (async function () {
