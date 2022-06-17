@@ -5,12 +5,12 @@ Generate documentation using ShowTheDocs! it's pretty easy. Consider the followi
 content.json
 ```json 
 {
-    "language":"pt-BR"
+    "language":"pt-BR",
     "title": "Show The Docs!",
     "description": "FlatFile Documentation Generator",
     "favicon":"https://place-hold.it/100x100?text=STD", // absolute path to your favicon
     "color":"#FFFF00", // CSS color. Used as accent color. Default is orange
-    "author":"Your Name",
+    "author":"{{name}}",
     "logo": "https://place-hold.it/200x100?text=ShowTheDocs", // absolute path to your logo
     "downloadbutton": "http://github.com/zonaro/ShowTheDocs", //ommit if you want to hide download button
     "printbutton": "Printe Me ;)", //ommit if you want to hide print button.
