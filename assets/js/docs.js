@@ -21,7 +21,7 @@ async function getJson(url) {
 
 async function getText(url, alternateText) {
 	console.log('Getting', url);
-	return await fetch(url, { mode: 'cors' }).then(async (response) => await response.text().then(async (txt) => await txt.ifBlank(alternateText) || ""));
+	return await fetch(url, { mode: 'cors' }).then(async (response) => await response.text().then(async (txt) =>  await  txt.ifBlank(alternateText) || ""));
 }
 
 function parseHTML(html) {
@@ -42,6 +42,17 @@ function stringTemplateParser(expression, valueObj) {
 	});
 	return text
 }
+
+
+function stringTemplateParserQuery(expression) {
+	let arr = window.location.query.keys();
+	for (let index = 0; index < arr.length; index++) {	 
+		expression = stringTemplateParser(expression, getParam(arr[index]));
+	}
+	return expression;
+}
+
+
 
 
 window.search = function (filter, keep) {
@@ -98,6 +109,8 @@ window.onresize = function () {
 	responsiveSidebar();
 };
 
+ 
+
 /* ===== MAIN  ====== */
 const main = (async function () {
 
@@ -117,32 +130,32 @@ const main = (async function () {
 
 
 	if (json.language) {
-		document.querySelector("html").setAttribute("lang",json.language)
+		document.querySelector("html").setAttribute("lang", json.language)
 	}
 
 	if (json.title) {
-		json.title = marked.parseInline(json.title || "");
+		json.title = stringTemplateParserQuery(marked.parseInline(json.title || ""));
 		document.querySelector("title").textContent = json.title;
 		window.title = json.title;
 	}
 
 	if (json.color) {
 		var maincolor = document.createElement("style");
-		maincolor.textContent = ":root{--bs-primary:" + json.color + "!important;}";
+		maincolor.textContent = ":root{--bs-primary:" + stringTemplateParserQuery(json.color) + "!important;}";
 		document.querySelector("head").appendChild(maincolor);
 		console.log("Color", maincolor);
 	}
 
 	if (json.author) {
-		document.getElementById("author").setAttribute("content", json.author);
+		document.getElementById("author").setAttribute("content", stringTemplateParserQuery(json.author));
 	}
 
 	if (json.description) {
-		document.getElementById("description").setAttribute("content", json.description);
+		document.getElementById("description").setAttribute("content", stringTemplateParserQuery(json.description));
 	}
 
 	if (json.favicon) {
-		document.getElementById("favicon").setAttribute("href", json.favicon);
+		document.getElementById("favicon").setAttribute("href", stringTemplateParserQuery(json.favicon));
 	}
 
 	if (json.content)
@@ -154,7 +167,7 @@ const main = (async function () {
 			}
 
 			if (item.content)
-				item.content = marked.parse(item.content || "");
+				item.content = stringTemplateParserQuery(marked.parse(item.content || ""));
 
 
 			if (item.aftercontentfile) {
@@ -162,16 +175,16 @@ const main = (async function () {
 			}
 
 			if (item.aftercontent)
-				item.aftercontent = marked.parse(item.aftercontent || "");
+				item.aftercontent = stringTemplateParserQuery(marked.parse(item.aftercontent || ""));
 
 			if (item.warning)
-				item.warning = marked.parse(item.warning || "");
+				item.warning = stringTemplateParserQuery(marked.parse(item.warning || ""));
 
 			if (item.info)
-				item.info = marked.parse(item.info || "");
+				item.info = stringTemplateParserQuery(marked.parse(item.info || ""));
 
 			if (item.danger)
-				item.danger = marked.parse(item.danger || "");
+				item.danger = stringTemplateParserQuery(marked.parse(item.danger || ""));
 
 		}
 
