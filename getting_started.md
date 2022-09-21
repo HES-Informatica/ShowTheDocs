@@ -1,8 +1,8 @@
 
-Generate documentation using ShowTheDocs! it's pretty easy. Consider the following json:
+Generate documentation using ShowTheDocs! it's pretty easy. Create a GitHub repo with the following json on main branch:
 
 
-content.json
+Name: content.json
 ```json 
 {
     "language":"pt-BR",
@@ -64,5 +64,6 @@ content.json
         }
     ]
 }
-
+ 
 ```
+Now, just navigate to http://zonaro.github.io/ShowTheDocs?repo=YourUserName/YourRepoName to see the generated documentation
