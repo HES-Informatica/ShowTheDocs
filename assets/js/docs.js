@@ -22,7 +22,8 @@ String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() 
 
 function fixRelativePathRepo(repo, relative) {
 	repo = repo || window.repo || "";
-	if (repo.isNotBlank() && relative.isRelativeURL()) {
+	relative = relative || null;
+	if (relative != null && repo.isNotBlank() && relative.isRelativeURL()) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
 	}
 	return relative;
@@ -240,6 +241,15 @@ const main = (async function () {
 			if (item.danger)
 				item.danger = stringTemplateParserQuery(marked.parse(item.danger || ""));
 
+
+			if (item.lightbox)
+				for (let img_index = 0; img_index < item.lightbox.length; index++) {
+					let img = item.lightbox[img_index];
+					img.image = fixRelativePathRepo(window.repo, img.image);
+
+				}
+
+
 		}
 
 	window.documentationData = json;
@@ -323,6 +333,12 @@ const main = (async function () {
 		methods: {
 			basePath() {
 				return window.basePath;
+			},
+			repo() {
+				return window.repo;
+			},
+			fixRelativePathRepo(url) {
+				return fixRelativePathRepo(window.repo, url);
 			},
 			fixId(id) {
 				id = `${id}`.split('.').join("-");
