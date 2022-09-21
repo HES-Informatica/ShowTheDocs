@@ -6,8 +6,29 @@ const sass = new Sass();
 window.location.query = new URLSearchParams(window.location.search);
 
 String.prototype.isBlank = function () { return `${this}`.trim() == ""; }
+String.prototype.isNotBlank = function () { return `${this}`.isBlank() == false; }
 
 String.prototype.ifBlank = function (e) { return `${this}`.isBlank() ? (e || "") : `${this}`; }
+
+
+String.prototype.isAbsoluteURL = function () {
+
+	const r = new RegExp('^(?:[a-z]+:)?//', 'i');
+	return `${this}`.isBlank() == false && r.test(`${this}`);
+}
+
+String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() == false; }
+
+
+function fixRelativePathRepo(repo, relative) {
+	repo = repo || window.repo || "";
+	if (repo.isNotBlank() && relative.isRelativeURL()) {
+		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
+	}
+	return relative;
+}
+
+
 
 async function getJson(url) {
 	try {
@@ -68,7 +89,7 @@ function stringTemplateParserQuery(expression) {
 		return value;
 	});
 	return text;
-	 
+
 }
 
 
@@ -137,10 +158,10 @@ const main = (async function () {
 	window.repo = getParam('repo') || '';
 	window.basePath = getParam('basePath');
 
-	if(window.repo.isBlank() == false){
+	if (window.repo.isNotBlank()) {
 
-        window.basePath = `https://raw.githubusercontent.com/${window.repo}/main/content.json`;
-		console.log('Using GitHub Repo',window.repo);
+		window.basePath = fixRelativePathRepo(window.repo, "/main/content.json");
+		console.log('Using GitHub Repo', window.repo);
 
 	}
 
@@ -191,6 +212,8 @@ const main = (async function () {
 			let item = json.content[index];
 
 			if (item.contentfile) {
+
+				item.contentfile = fixRelativePathRepo(window.repo, item.contentfile);
 				item.content = await getText(item.contentfile, item.content);
 			}
 
@@ -199,7 +222,10 @@ const main = (async function () {
 
 
 			if (item.aftercontentfile) {
+				item.aftercontentfile = fixRelativePathRepo(window.repo, item.aftercontentfile);
 				item.aftercontent = await getText(item.aftercontentfile, item.aftercontent);
+
+
 			}
 
 			if (item.aftercontent)
