@@ -21,7 +21,7 @@ String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() 
 
 
 function fixRelativePathRepo(repo, relative) {
-
+	debugger;
 	repo = repo || window.repo || "";
 	relative = relative || null;
 	
