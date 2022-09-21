@@ -134,7 +134,16 @@ window.onresize = function () {
 const main = (async function () {
 
 
+	window.repo = getParam('repo');
 	window.basePath = getParam('basePath');
+
+	if(window.repo.isBlank() == false){
+
+        window.basePath = `https://raw.githubusercontent.com/${window.repo}/main/content.json`;
+		console.log('Using GitHub Repo',window.repo);
+
+	}
+
 
 	if (window.basePath == undefined) {
 
