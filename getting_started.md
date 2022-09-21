@@ -32,14 +32,14 @@ Name: content.json
             "icon": "fas fa-file", // any fontAwesome 6 FREE Icon
             "title": "Introduction", // article title
             "date": "05/05/2022",
-            "contentfile": "https://raw.githubusercontent.com/yourusername/yourrepo/main/README.md", //needs to be absolute
-            "aftercontentfile":"https://raw.githubusercontent.com/yourusername/yourrepo/main/LICENSE", //needs to be absolute
+            "contentfile": "/README.md", //needs to be absolute
+            "aftercontentfile":"/LICENSE", //needs to be absolute
             "info": "this is a info alert",
             "danger": "this is a danger alert",
             "warning": "this is a warning alert",
             "lightbox": [ // creates a carroussel with images after content and before alerts and aftercontent
                 {
-                    "image": "https://raw.githubusercontent.com/yourusername/yourrepo/main/image.png", //needs to be absolute
+                    "image": "/img/image.png", //needs to be absolute
                     "title": "Image Description"
                 }
             ]
