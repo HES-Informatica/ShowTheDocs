@@ -162,15 +162,15 @@ const main = (async function () {
 	window.basePath = getParam('basePath');
 
 	if (window.repo.isNotBlank()) {
-		window.basePath = fixRelativePathRepo(window.repo, "main/content.json");
+		window.basePath = fixRelativePathRepo(window.repo, "content.json");
 		console.log('Using GitHub Repo', window.repo);
 	}
 
 
 	if (window.basePath == undefined) {
 		console.warn('Documentation path not specified');
-		window.repo = 'zonaro/ShowTheDocs'
-		window.basePath = fixRelativePathRepo(window.repo, "main/content.json");;
+		window.repo = 'zonaro/ShowTheDocs/main'
+		window.basePath = fixRelativePathRepo(window.repo, "content.json");;
 	}
 
 	console.log('Documentation Orign', window.basePath);
