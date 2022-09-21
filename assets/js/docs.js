@@ -21,10 +21,13 @@ String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() 
 
 
 function fixRelativePathRepo(repo, relative) {
+
 	repo = repo || window.repo || "";
 	relative = relative || null;
+	
 	if (relative != null && repo.isNotBlank() && relative.isRelativeURL()) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
+		console.warn("Changing relative url to", relative);
 	}
 	return relative;
 }
