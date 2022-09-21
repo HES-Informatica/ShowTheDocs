@@ -134,7 +134,7 @@ window.onresize = function () {
 const main = (async function () {
 
 
-	window.repo = getParam('repo');
+	window.repo = getParam('repo') || '';
 	window.basePath = getParam('basePath');
 
 	if(window.repo.isBlank() == false){
