@@ -66,4 +66,3 @@ Name: content.json
 }
  
 ```
-Now, just navigate to http://zonaro.github.io/ShowTheDocs?repo=YourUserName/YourRepoName to see the generated documentation
