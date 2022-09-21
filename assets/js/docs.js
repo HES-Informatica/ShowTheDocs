@@ -20,11 +20,10 @@ String.prototype.isAbsoluteURL = function () {
 String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() == false; }
 
 
-function fixRelativePathRepo(repo, relative) {
-	debugger;
+function fixRelativePathRepo(repo, relative) { 
 	repo = repo || window.repo || "";
 	relative = relative || null;
-	
+
 	if (relative != null && repo.isNotBlank() && relative.isRelativeURL()) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
 		console.warn("Changing relative url to", relative);
@@ -163,17 +162,15 @@ const main = (async function () {
 	window.basePath = getParam('basePath');
 
 	if (window.repo.isNotBlank()) {
-
-		window.basePath = fixRelativePathRepo(window.repo, "/main/content.json");
+		window.basePath = fixRelativePathRepo(window.repo, "main/content.json");
 		console.log('Using GitHub Repo', window.repo);
-
 	}
 
 
 	if (window.basePath == undefined) {
-
 		console.warn('Documentation path not specified');
-		window.basePath = location.pathname + '/content.json';
+		window.repo = 'zonaro/ShowTheDocs'
+		window.basePath = fixRelativePathRepo(window.repo, "main/content.json");;
 	}
 
 	console.log('Documentation Orign', window.basePath);
