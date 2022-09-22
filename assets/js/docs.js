@@ -225,6 +225,10 @@ const main = (async function () {
 		json.logo = fixRelativePathRepo(window.repo, json.logo);
 	}
 
+	if (json.downloadbutton) {
+		json.downloadbutton = fixRelativePathRepo(window.repo, json.downloadbutton);
+	}
+
 	if (json.content)
 		for (let index = 0; index < json.content.length; index++) {
 			let item = json.content[index];
