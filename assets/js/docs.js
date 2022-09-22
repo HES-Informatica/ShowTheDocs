@@ -160,14 +160,15 @@ const main = (async function () {
 	window.repo = getParam('repo') || '';
 	window.basePath = getParam('basePath') || '';
 
-	if (window.repo.isBlank() && window.basePath.isBlank()) {	 
+	if (window.repo.isBlank() && window.basePath.isBlank()) {
 		let hash = location.hash.substring(1);
 		if (hash.isNotBlank() && hash.startsWith('/')) {
 			let parts = hash.split('#');
 			window.repo = parts[0];
 			parts[0] = '';
 			if (parts.length > 1) {
-				hash = parts.join("#");
+				hash = parts.join("");
+				document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
 			}
 		}
 	}
