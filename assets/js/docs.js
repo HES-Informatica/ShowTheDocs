@@ -349,6 +349,13 @@ const main = (async function () {
 					}
 				});
 
+
+
+				document.querySelector(".docs-content").querySelectorAll('a').forEach(function (element) {
+					element.href = fixRelativePathRepo(window.repo, element.href);
+				});
+
+
 				document.getElementsByClassName("loadingio-spinner-eclipse-jxj4whxfvsh")[0].remove();
 			})
 		},
