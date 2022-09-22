@@ -1,8 +1,6 @@
 
-Generate documentation using ShowTheDocs! it's pretty easy. Create a GitHub repo with the following json on main branch:
-
-
-Name: content.json
+Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub repo with the following json on documentation branch an name it **contet.json**:
+ 
 ```json 
 {
     "language":"pt-BR",
