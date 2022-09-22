@@ -28,6 +28,7 @@ function fixRelativePathRepo(repo, relative) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
 		console.warn("Changing relative url to", relative);
 	}
+	relative = relative.split("/").filter(function (x) { x != null && x != "" }).join("/");
 	return relative.ifBlank("javascript:void(0);");
 }
 
