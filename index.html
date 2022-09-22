@@ -150,7 +150,7 @@
 							:class="{'docs-intro': (headerType(item.id) =='h1'), 'docs-section': (headerType(item.id) =='h2') }"
 							v-bind:id="'item-' + fixId(item.id)">
 							<p v-html="item.content"></p>
-							<small v-if="data.viewraw && item.contentfile"><a :href="item.contentfile">{{data.viewraw}}</a> </small>
+							<small v-if="data.viewraw && item.contentfile"><a :href="item.contentfile" target="_blank">{{data.viewraw}}</a> </small>
 
 							<figure :class="'simplelightbox-gallery-' + fixId(item.id)" class="row mb-3">
 								<div class="col-12 col-md-4 mb-3 img-print" v-if="item.lightbox"
@@ -210,7 +210,7 @@
 							</div>
 
 							<p v-html="item.aftercontent"></p>
-							<small v-if="data.viewraw && item.aftercontentfile"><a :href="item.aftercontentfile">{{data.viewraw}}</a> </small>
+							<small v-if="data.viewraw && item.aftercontentfile"><a :href="item.aftercontentfile" target="_blank">{{data.viewraw}}</a> </small>
 						</section>
 						<br />
 						
