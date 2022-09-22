@@ -164,7 +164,7 @@ const main = (async function () {
 	window.basePath = getParam('basePath') || '';
 
 	if (window.repo.isBlank() && window.basePath.isBlank()) {
-		  window.hash = location.hash.substring(1);
+		window.hash = location.hash.substring(1);
 		if (hash.isNotBlank() && hash.startsWith('/')) {
 			let parts = hash.split('#');
 			window.repo = parts[0];
@@ -359,7 +359,9 @@ const main = (async function () {
 				});
 
 				setTimeout(function () {
-					document.getElementById(window.hash).scrollIntoView({ behavior: 'smooth' });
+					let scrollinto = document.getElementById(window.hash);
+					if (scrollinto)
+						scrollinto.scrollIntoView({ behavior: 'smooth' });
 				}, 500);
 
 				document.getElementsByClassName("loadingio-spinner-eclipse-jxj4whxfvsh")[0].remove();
