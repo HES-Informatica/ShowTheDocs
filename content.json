@@ -1,6 +1,6 @@
 {
     "title": "Show The Docs!",
-    "description": "FlatFile Documentation Generator", 
+    "description": "FlatFile Documentation Generator",
     "social": [
         {
             "name": "Github",
@@ -16,7 +16,8 @@
             "icon": "fas fa-file",
             "title": "Show The Docs",
             "date": "05/05/2022",
-            "contentfile": "README.md"
+            "contentfile": "README.md",
+            "viewraw": "Visualizar Original"
         },
         {
             "id": "1.1",
@@ -24,15 +25,15 @@
             "title": "Getting Started",
             "date": "05/05/2022",
             "contentfile": "getting_started.md",
-            "warning":"All image and link paths inside MD Files must be absolute."
+            "viewraw": "Visualizar Original"
         },
         {
             "id": "1.2",
             "icon": "fas fa-share",
-            "title": "Generate a documentation",          
+            "title": "Generate a documentation",
             "content": "Now just go to http://zonaro.github.io/ShowTheDocs/#/YourUserName/YourRepo/DocBranch to see the generated documentation.",
-            "info":"You can also, specify the `basePath` parameter with absolute path to your json istead of /#/YourUserName/YourRepo/DocBranch.",
-            "warning":"When using the `basePath` parameter, all image and link paths in this json must be absolute."
+            "info": "You can also, specify the `basePath` parameter with absolute path to your json istead of /#/YourUserName/YourRepo/DocBranch.",
+            "warning": "When using the `basePath` parameter, all image and link paths in this json must be absolute."
         }
     ]
 }
