@@ -171,7 +171,7 @@ const main = (async function () {
 				document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
 			}
 		} else {
-			location.href = location.href + "/#/zonaro/ShowTheDocs/main";
+			location.href = location.href + "#/zonaro/ShowTheDocs/main";
 		}
 	}
 
@@ -179,7 +179,7 @@ const main = (async function () {
 		window.basePath = fixRelativePathRepo(window.repo, "content.json");
 		console.log('Using GitHub Repo', window.repo);
 	}
-	
+
 	if (window.basePath.isBlank()) {
 		window.basePath = fixRelativePathRepo(window.repo, "content.json");;
 	}
