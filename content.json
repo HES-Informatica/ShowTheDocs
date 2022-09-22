@@ -29,8 +29,9 @@
             "id": "1.2",
             "icon": "fas fa-share",
             "title": "Generate a documentation",          
-            "content": "Now just go to http://zonaro.github.io/ShowTheDocs/?repo=YourUserName/YourRepo/main to see the generated documentation.",
-            "info":"You can also, specify the `basePath` parameter with absolute path to your json instead `repo` parameter."
+            "content": "Now just go to http://zonaro.github.io/ShowTheDocs/#/YourUserName/YourRepo/DocBranch to see the generated documentation.",
+            "info":"You can also, specify the `basePath` parameter with absolute path to your json istead of /#/YourUserName/YourRepo/DocBranch.",
+            "warning":"When using the `basePath` parameter, all image and link paths must be absolute."
         }
     ]
 }
