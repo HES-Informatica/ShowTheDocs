@@ -367,9 +367,14 @@ const main = (async function () {
 	window.vueApp.mount('#app');
 
 
-	document.querySelector('img').onerror = function () {
-		this.src = fixRelativePathRepo(window.repo, this.src)
-	}
+	document.querySelector('img[src]').forEach(function (el) {
+		el.src = fixRelativePathRepo(window.repo, el.src)
+	});
+
+	document.querySelector('a[href]').forEach(function (el) {
+		if (!el.href.startsWith("javascript:"))
+			el.href = fixRelativePathRepo(window.repo, el.href);
+	})
 
 
 	return window.vueApp;
