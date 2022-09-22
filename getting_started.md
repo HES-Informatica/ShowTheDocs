@@ -17,6 +17,7 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
     "infolabel": "Info", // the text used as label on any info alert. Default is "Info"
     "warninglabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
     "dangerlabel": "Danger", // the text used as label on any danger alert. Default is "Danger"
+    "viewraw": "Show File",// the text of file links, ommit if you want to hide
     "social": [ // generate top navbar and footer icons with links
         {
             "name": "Github",

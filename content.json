@@ -10,22 +10,22 @@
     ],
     "logo": "https://place-hold.it/200x100?text=ShowTheDocs",
     "downloadbutton": "http://github.com/zonaro/ShowTheDocs",
+    "viewraw": "Visualizar Original",
     "content": [
         {
             "id": "1",
             "icon": "fas fa-file",
             "title": "Show The Docs",
             "date": "05/05/2022",
-            "contentfile": "README.md",
-            "viewraw": "Visualizar Original"
+            "contentfile": "README.md"
+          
         },
         {
             "id": "1.1",
             "icon": "fas fa-paper-plane",
             "title": "Getting Started",
             "date": "05/05/2022",
-            "contentfile": "getting_started.md",
-            "viewraw": "Visualizar Original"
+            "contentfile": "getting_started.md"
         },
         {
             "id": "1.2",
