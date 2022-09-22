@@ -1,4 +1,5 @@
- 
+
+
 
 const sass = new Sass();
 
@@ -11,14 +12,14 @@ String.prototype.ifBlank = function (e) { return `${this}`.isBlank() ? (e || "")
 
 const absoluteTest = new RegExp('^(?:[a-z]+:)?//', 'i');
 
-String.prototype.isAbsoluteURL = function () {	
+String.prototype.isAbsoluteURL = function () {
 	return `${this}`.isBlank() == false && absoluteTest.test(`${this}`);
 }
 
 String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() == false; }
 
 
-function fixRelativePathRepo(repo, relative) { 
+function fixRelativePathRepo(repo, relative) {
 	repo = repo || window.repo || "";
 	relative = relative || null;
 
@@ -155,7 +156,7 @@ window.onresize = function () {
 /* ===== MAIN  ====== */
 const main = (async function () {
 
- 
+
 	window.repo = getParam('repo') || '';
 	window.basePath = getParam('basePath');
 
@@ -208,7 +209,7 @@ const main = (async function () {
 	}
 
 	if (json.favicon) {
-		json.logo = fixRelativePathRepo(window.repo, json.logo);	 
+		json.logo = fixRelativePathRepo(window.repo, json.logo);
 	}
 
 	if (json.content)
@@ -362,9 +363,19 @@ const main = (async function () {
 			return { data: json };
 		}
 	});
-	window.vueApp.mount('#app')
+
+	window.vueApp.mount('#app');
+
+
+	document.querySelector('img').onerror = function () {
+		this.src = fixRelativePathRepo(window.repo, this.src)
+	}
+
+
 	return window.vueApp;
 })();
+
+
 
 
 
