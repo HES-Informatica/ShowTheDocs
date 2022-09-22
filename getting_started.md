@@ -66,3 +66,5 @@ Name: content.json
 }
  
 ```
+
+[Teste de link relativo]("getting_started.md")
