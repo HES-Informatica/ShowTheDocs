@@ -22,13 +22,13 @@ const docBase = location.origin + location.pathname;
 
 function fixRelativePathRepo(repo, relative) {
 	repo = repo || window.repo || "";
-	relative = relative || null;
+	relative = relative || "";
 	relative = relative.split(docBase).join("");
-	if (relative != null && repo.isNotBlank() && relative.isRelativeURL()) {
+	if (relative.isNotBlank() && repo.isNotBlank() && relative.isRelativeURL()) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
 		console.warn("Changing relative url to", relative);
 	}
-	return relative;
+	return relative.ifBlank("javascript:void(0);");
 }
 
 
