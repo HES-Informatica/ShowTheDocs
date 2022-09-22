@@ -21,15 +21,17 @@ String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() 
 const docBase = location.origin + location.pathname;
 
 function fixRelativePathRepo(repo, relative) {
+	debugger;
 	repo = repo || window.repo || "";
 	relative = relative || "";
 	relative = relative.split(docBase).join("");
 	if (relative.isNotBlank() && repo.isNotBlank() && relative.isRelativeURL()) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
-		console.warn("Changing relative url to", relative);
 	}
 	relative = relative.split("/").filter(function (x) { x != null && x != "" }).join("/");
-	return relative.ifBlank("javascript:void(0);");
+	relative = relative.ifBlank("javascript:void(0);");
+	console.log('URL', relative);
+	return relative;
 }
 
 
