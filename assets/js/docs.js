@@ -172,10 +172,8 @@ const main = (async function () {
 			if (parts.length > 1) {
 				hash = parts.join("");
 				setTimeout(function () {
-					document.getElementById(hash).scrollIntoView();
+					document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
 				}, 500);
-
-
 			}
 		} else {
 			location.href = docBase + "#/zonaro/ShowTheDocs/main";
