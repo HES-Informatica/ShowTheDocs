@@ -1,5 +1,5 @@
 
-Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub repo with the following json on documentation branch an name it **contet.json**:
+Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub repo with the following json on documentation branch an name it **content.json**:
  
 ```json 
 {
