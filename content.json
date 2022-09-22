@@ -1,6 +1,7 @@
 {
     "title": "Show The Docs!",
     "description": "FlatFile Documentation Generator",
+    "datelabel": "Updated",
     "social": [
         {
             "name": "Github",
@@ -24,12 +25,13 @@
             "id": "1.1",
             "icon": "fas fa-paper-plane",
             "title": "Getting Started",
-            "date": "05/05/2022",
+            "date": "22/09/2022",
             "contentfile": "getting_started.md"
         },
         {
             "id": "1.2",
             "icon": "fas fa-share",
+            "date": "22/09/2022",
             "title": "Generate a documentation",
             "content": "Now just go to http://zonaro.github.io/ShowTheDocs/#/YourUserName/YourRepo/DocBranch to see the generated documentation.",
             "info": "You can also, specify the `basePath` parameter with absolute path to your json istead of /#/YourUserName/YourRepo/DocBranch.",
