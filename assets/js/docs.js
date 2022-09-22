@@ -158,7 +158,20 @@ const main = (async function () {
 
 
 	window.repo = getParam('repo') || '';
-	window.basePath = getParam('basePath');
+	window.basePath = getParam('basePath') || '';
+
+	if (window.repo.isBlank() && window.basePath.isBlank()) {
+		let hash = location.hash.substring(1);
+		if (hash.isNotBlank() && hash.startsWith('/')) {
+			let parts = hash.split('#');
+			window.repo = parts[0];
+			parts[0] = '';
+			if (parts.length > 1) {
+				hash = parts.join("#");
+			}
+		}
+	}
+
 
 	if (window.repo.isNotBlank()) {
 		window.basePath = fixRelativePathRepo(window.repo, "content.json");
@@ -166,7 +179,7 @@ const main = (async function () {
 	}
 
 
-	if (window.basePath == undefined) {
+	if (window.basePath.isBlank()) {
 		console.warn('Documentation path not specified');
 		window.repo = 'zonaro/ShowTheDocs/main'
 		window.basePath = fixRelativePathRepo(window.repo, "content.json");;
@@ -270,7 +283,7 @@ const main = (async function () {
 					x.addEventListener('submit', function (event) {
 						event.preventDefault();
 						window.search(x.children[0].value, false);
-						window.find(x.children[0].value, false, true, true, false, true, true);					 
+						window.find(x.children[0].value, false, true, true, false, true, true);
 					});
 				});
 
@@ -365,7 +378,7 @@ const main = (async function () {
 		}
 	});
 
-	window.vueApp.mount('#app'); 
+	window.vueApp.mount('#app');
 	return window.vueApp;
 })();
 
