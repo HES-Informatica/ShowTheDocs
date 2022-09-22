@@ -1,5 +1,4 @@
-"use strict";
-
+ 
 
 const sass = new Sass();
 
@@ -10,11 +9,10 @@ String.prototype.isNotBlank = function () { return `${this}`.isBlank() == false;
 
 String.prototype.ifBlank = function (e) { return `${this}`.isBlank() ? (e || "") : `${this}`; }
 
+const absoluteTest = new RegExp('^(?:[a-z]+:)?//', 'i');
 
-String.prototype.isAbsoluteURL = function () {
-
-	const r = new RegExp('^(?:[a-z]+:)?//', 'i');
-	return `${this}`.isBlank() == false && r.test(`${this}`);
+String.prototype.isAbsoluteURL = function () {	
+	return `${this}`.isBlank() == false && absoluteTest.test(`${this}`);
 }
 
 String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() == false; }
@@ -157,7 +155,7 @@ window.onresize = function () {
 /* ===== MAIN  ====== */
 const main = (async function () {
 
-	debugger;
+ 
 	window.repo = getParam('repo') || '';
 	window.basePath = getParam('basePath');
 
@@ -243,7 +241,7 @@ const main = (async function () {
 
 
 			if (item.lightbox)
-				for (let img_index = 0; img_index < item.lightbox.length; index++) {
+				for (let img_index = 0; img_index < item.lightbox.length; img_index++) {
 					let img = item.lightbox[img_index];
 					img.image = fixRelativePathRepo(window.repo, img.image);
 
