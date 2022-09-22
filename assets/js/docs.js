@@ -265,11 +265,13 @@ const main = (async function () {
 
 					x.children[0].addEventListener('keydown', function (event) {
 						window.search(this.value, true);
-					})
+					});
+
 					x.addEventListener('submit', function (event) {
 						event.preventDefault();
 						window.search(x.children[0].value, false);
-						window.find(x.children[0].value, false, `${e.code}` == 'ControlLeft' || `${e.code}` == 'ControlRight', true, false, true, true);
+						window.find(x.children[0].value, false, true, true, false, true, true);
+						// window.find(x.children[0].value, false, `${event.code}` == 'ControlLeft' || `${event.code}` == 'ControlRight', true, false, true, true);
 					});
 				});
 
