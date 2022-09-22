@@ -25,14 +25,12 @@
 
 	<!-- Theme CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
- 
- <STYLE>
 
-body{
-	overflow-x:hidden!important;
-}
-
- </STYLE>
+	<STYLE>
+		body {
+			overflow-x: hidden !important;
+		}
+	</STYLE>
 </head>
 
 <body>
@@ -42,7 +40,7 @@ body{
 			<div></div>
 		</div>
 	</div>
- 
+
 
 	<div class="docs-page" id="app" v-cloak>
 		<header class="header fixed-top no-print">
@@ -84,8 +82,10 @@ body{
 
 						</ul>
 						<!--//social-list-->
-						<a style="margin-right:10px" href="javascript:window.print();" class="btn btn-outline-primary d-none d-lg-flex">{{data.printbutton || "Print"}}</a>
-						<a v-if="data.downloadbutton" :href="data.downloadbutton" class="btn btn-primary d-none d-lg-flex">Download</a>
+						<a style="margin-right:10px" href="javascript:window.print();"
+							class="btn btn-outline-primary d-none d-lg-flex">{{data.printbutton || "Print"}}</a>
+						<a v-if="data.downloadbutton" :href="data.downloadbutton"
+							class="btn btn-primary d-none d-lg-flex">Download</a>
 					</div>
 					<!--//docs-top-utilities-->
 				</div>
@@ -152,7 +152,8 @@ body{
 							<p v-html="item.content"></p>
 
 							<figure :class="'simplelightbox-gallery-' + fixId(item.id)" class="row mb-3">
-								<div class="col-12 col-md-4 mb-3 img-print" v-if="item.lightbox" v-for="img in item.lightbox">
+								<div class="col-12 col-md-4 mb-3 img-print" v-if="item.lightbox"
+									v-for="img in item.lightbox">
 									<a v-bind:href="img.image">
 										<img class="figure-img img-fluid shadow rounded print-app"
 											v-bind:src="img.image" alt="" v-bind:title="img.title" />
@@ -189,6 +190,9 @@ body{
 									<p v-html="item.warning"></p>
 								</div>
 								<!--//content-->
+								<br />
+								<small v-if="item.viewraw && item.aftercontent"><a
+										:href="item.contentfile">{{item.viewraw}}</a> </small>
 							</div>
 
 							<div v-if="item.info && item.info != ''" class="callout-block callout-block-info me-1">
@@ -209,6 +213,8 @@ body{
 
 						</section>
 						<br />
+						<small v-if="item.viewraw && item.aftercontent"><a
+								:href="item.aftercontentfile">{{item.viewraw}}</a> </small>
 					</article>
 					<!--//col-->
 				</div>
