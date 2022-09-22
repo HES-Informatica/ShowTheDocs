@@ -352,6 +352,7 @@ const main = (async function () {
 
 
 				document.querySelector(".docs-content").querySelectorAll('a').forEach(function (element) {
+					console.log('Checking document links');
 					element.href = fixRelativePathRepo(window.repo, element.href);
 				});
 
