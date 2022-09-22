@@ -164,16 +164,13 @@ const main = (async function () {
 	window.basePath = getParam('basePath') || '';
 
 	if (window.repo.isBlank() && window.basePath.isBlank()) {
-		let hash = location.hash.substring(1);
+		  window.hash = location.hash.substring(1);
 		if (hash.isNotBlank() && hash.startsWith('/')) {
 			let parts = hash.split('#');
 			window.repo = parts[0];
 			parts[0] = '';
 			if (parts.length > 1) {
-				hash = parts.join("");
-				setTimeout(function () {
-					document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
-				}, 500);
+				window.hash = parts.join("");
 			}
 		} else {
 			location.href = docBase + "#/zonaro/ShowTheDocs/main";
@@ -361,6 +358,9 @@ const main = (async function () {
 					element.src = fixRelativePathRepo(window.repo, element.src);
 				});
 
+				setTimeout(function () {
+					document.getElementById(window.hash).scrollIntoView({ behavior: 'smooth' });
+				}, 500);
 
 				document.getElementsByClassName("loadingio-spinner-eclipse-jxj4whxfvsh")[0].remove();
 			})
