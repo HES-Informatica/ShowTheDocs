@@ -360,8 +360,10 @@ const main = (async function () {
 
 				setTimeout(function () {
 					let scrollinto = document.getElementById(window.hash);
-					if (scrollinto)
+					if (scrollinto) {
+						console.log("Scrolling to", scrollinto);
 						scrollinto.scrollIntoView({ behavior: 'smooth' });
+					}
 				}, 500);
 
 				document.getElementsByClassName("loadingio-spinner-eclipse-jxj4whxfvsh")[0].remove();
