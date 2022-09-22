@@ -22,7 +22,7 @@ String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() 
 function fixRelativePathRepo(repo, relative) {
 	repo = repo || window.repo || "";
 	relative = relative || null;
-
+	relative = relative.split("https://zonaro.github.io/ShowTheDocs/").join("");
 	if (relative != null && repo.isNotBlank() && relative.isRelativeURL()) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
 		console.warn("Changing relative url to", relative);
@@ -351,9 +351,11 @@ const main = (async function () {
 
 
 
-				document.querySelector(".docs-content").querySelectorAll('a').forEach(function (element) {
-					console.log('Checking document links',element);
+				document.querySelector(".docs-content").querySelectorAll('a').forEach(function (element) {				 
 					element.href = fixRelativePathRepo(window.repo, element.href);
+				});
+				document.querySelector(".docs-content").querySelectorAll('img').forEach(function (element) {				 
+					element.src = fixRelativePathRepo(window.repo, element.href);
 				});
 
 
