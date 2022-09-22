@@ -364,22 +364,7 @@ const main = (async function () {
 		}
 	});
 
-	window.vueApp.mount('#app');
-
-
-
-	 
-
-	document.querySelectorAll('img').forEach(function (el) {
-		el.src = fixRelativePathRepo(window.repo, el.src)
-	});
-
-	document.querySelectorAll('a[href]').forEach(function (el) {
-		if (!el.href.startsWith("javascript:"))
-			el.href = fixRelativePathRepo(window.repo, el.href);
-	});
-
-
+	window.vueApp.mount('#app'); 
 	return window.vueApp;
 })();
 
