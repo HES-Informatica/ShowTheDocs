@@ -27,9 +27,9 @@ function fixRelativePathRepo(repo, relative) {
 	if (relative.isNotBlank() && repo.isNotBlank() && relative.isRelativeURL() && !relative.startsWith("javascript:") && !relative.startsWith("#"))  {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
 		relative = 'https://' + relative.split("/").filter((i, p) => p > 0 && i != null && i != '').join("/");
+		console.log('Changing relative URL to', relative);
 	}
 	relative = relative.ifBlank("javascript:void(0);");
-	console.log('URL', relative);
 	return relative;
 }
 
