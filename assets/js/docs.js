@@ -170,6 +170,8 @@ const main = (async function () {
 				hash = parts.join("");
 				document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
 			}
+		} else {
+			location.href = location.href + "/#/zonaro/ShowTheDocs/main";
 		}
 	}
 
