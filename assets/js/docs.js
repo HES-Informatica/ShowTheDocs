@@ -203,7 +203,12 @@ const main = (async function () {
 	}
 
 	if (json.favicon) {
+		json.favicon = fixRelativePathRepo(window.repo, json.favicon);
 		document.getElementById("favicon").setAttribute("href", stringTemplateParserQuery(json.favicon));
+	}
+
+	if (json.favicon) {
+		json.logo = fixRelativePathRepo(window.repo, json.logo);	 
 	}
 
 	if (json.content)
@@ -211,7 +216,6 @@ const main = (async function () {
 			let item = json.content[index];
 
 			if (item.contentfile) {
-
 				item.contentfile = fixRelativePathRepo(window.repo, item.contentfile);
 				item.content = await getText(item.contentfile, item.content);
 			}
