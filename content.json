@@ -23,7 +23,8 @@
             "icon": "fas fa-paper-plane",
             "title": "Getting Started",
             "date": "05/05/2022",
-            "contentfile": "getting_started.md"
+            "contentfile": "getting_started.md",
+            "warning":"All image and link paths inside MD Files must be absolute."
         },
         {
             "id": "1.2",

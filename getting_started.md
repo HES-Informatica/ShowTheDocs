@@ -8,10 +8,10 @@ Name: content.json
     "language":"pt-BR",
     "title": "Show The Docs!",
     "description": "FlatFile Documentation Generator",
-    "favicon":"https://place-hold.it/100x100?text=STD", // absolute path to your favicon
+    "favicon":"https://place-hold.it/100x100?text=STD", // path to your favicon (absolute or relative to your GitHub Repo)
     "color":"#FFFF00", // CSS color. Used as accent color. Default is orange
     "author":"Your Name",
-    "logo": "https://place-hold.it/200x100?text=ShowTheDocs", // absolute path to your logo
+    "logo": "https://place-hold.it/200x100?text=ShowTheDocs", //path to your logo (absolute or relative to your GitHub Repo)
     "downloadbutton": "http://github.com/zonaro/ShowTheDocs", //ommit if you want to hide download button
     "printbutton": "Printe Me ;)", //ommit if you want to hide print button.
     "searchplaceholder": "Find me :)", // the placeholder text used for searchbox on top navbar. Default is "search"
@@ -32,14 +32,14 @@ Name: content.json
             "icon": "fas fa-file", // any fontAwesome 6 FREE Icon
             "title": "Introduction", // article title
             "date": "05/05/2022",
-            "contentfile": "/README.md", //needs to be absolute
-            "aftercontentfile":"/LICENSE", //needs to be absolute
+            "contentfile": "/README.md", // absolute or relative to your GitHub Repo
+            "aftercontentfile":"/LICENSE", // absolute or relative to your GitHub Repo
             "info": "this is a info alert",
             "danger": "this is a danger alert",
             "warning": "this is a warning alert",
             "lightbox": [ // creates a carroussel with images after content and before alerts and aftercontent
                 {
-                    "image": "/img/image.png", //needs to be absolute
+                    "image": "/img/image.png", // image path, absolute or relative to your GitHub Repo
                     "title": "Image Description"
                 }
             ]
