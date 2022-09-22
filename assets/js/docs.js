@@ -173,18 +173,10 @@ const main = (async function () {
 		} else {
 			location.href = location.href + "/#/zonaro/ShowTheDocs/main";
 		}
-	}
-
-
-	if (window.repo.isNotBlank()) {
+	} else if (window.repo.isNotBlank()) {
 		window.basePath = fixRelativePathRepo(window.repo, "content.json");
 		console.log('Using GitHub Repo', window.repo);
-	}
-
-
-	if (window.basePath.isBlank()) {
-		console.warn('Documentation path not specified');
-		window.repo = 'zonaro/ShowTheDocs/main'
+	} else if (window.basePath.isBlank()) {
 		window.basePath = fixRelativePathRepo(window.repo, "content.json");;
 	}
 
@@ -353,10 +345,10 @@ const main = (async function () {
 
 
 
-				document.querySelector(".docs-content").querySelectorAll('a').forEach(function (element) {				 
+				document.querySelector(".docs-content").querySelectorAll('a').forEach(function (element) {
 					element.href = fixRelativePathRepo(window.repo, element.href);
 				});
-				document.querySelector(".docs-content").querySelectorAll('img').forEach(function (element) {				 
+				document.querySelector(".docs-content").querySelectorAll('img').forEach(function (element) {
 					element.src = fixRelativePathRepo(window.repo, element.href);
 				});
 
