@@ -161,6 +161,7 @@ const main = (async function () {
 	window.basePath = getParam('basePath') || '';
 
 	if (window.repo.isBlank() && window.basePath.isBlank()) {
+		debugger;
 		let hash = location.hash.substring(1);
 		if (hash.isNotBlank() && hash.startsWith('/')) {
 			let parts = hash.split('#');
