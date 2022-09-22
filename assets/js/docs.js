@@ -171,7 +171,10 @@ const main = (async function () {
 			parts[0] = '';
 			if (parts.length > 1) {
 				hash = parts.join("");
+				window.onload = function () {
 				document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
+					
+				}
 			}
 		} else {
 			location.href = docBase + "#/zonaro/ShowTheDocs/main";
