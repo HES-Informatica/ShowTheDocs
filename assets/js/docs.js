@@ -173,10 +173,14 @@ const main = (async function () {
 		} else {
 			location.href = location.href + "/#/zonaro/ShowTheDocs/main";
 		}
-	} else if (window.repo.isNotBlank()) {
+	}
+
+	if (window.repo.isNotBlank()) {
 		window.basePath = fixRelativePathRepo(window.repo, "content.json");
 		console.log('Using GitHub Repo', window.repo);
-	} else if (window.basePath.isBlank()) {
+	}
+	
+	if (window.basePath.isBlank()) {
 		window.basePath = fixRelativePathRepo(window.repo, "content.json");;
 	}
 
