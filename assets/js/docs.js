@@ -356,7 +356,9 @@ const main = (async function () {
 				});
 				document.querySelector(".docs-content").querySelectorAll('img').forEach(function (element) {
 					element.src = fixRelativePathRepo(window.repo, element.src);
-				});
+				});			
+
+				document.getElementsByClassName("loadingio-spinner-eclipse-jxj4whxfvsh")[0].remove();
 
 				setTimeout(function () {
 					let scrollinto = document.getElementById(window.hash);
@@ -365,8 +367,6 @@ const main = (async function () {
 						scrollinto.scrollIntoView({ behavior: 'smooth' });
 					}
 				}, 500);
-
-				document.getElementsByClassName("loadingio-spinner-eclipse-jxj4whxfvsh")[0].remove();
 			})
 		},
 		methods: {
