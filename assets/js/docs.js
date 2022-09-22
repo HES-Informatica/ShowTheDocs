@@ -26,7 +26,7 @@ function fixRelativePathRepo(repo, relative) {
 	relative = relative.split(docBase).join("");
 	if (relative.isNotBlank() && repo.isNotBlank() && relative.isRelativeURL()) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
-		relative = 'https://' + relative.split("/").filter((i,p) =>  p > 0  && i != null && i != '').join("/");
+		relative = 'https://' + relative.split("/").filter((i, p) => p > 0 && i != null && i != '').join("/");
 	}
 	relative = relative.ifBlank("javascript:void(0);");
 	console.log('URL', relative);
@@ -379,14 +379,9 @@ const main = (async function () {
 			},
 			headerType(id) {
 				var i = id.split('.').length;
-				switch (i) {
-					case 1:
-						return "h1";
-					case 2:
-						return "h2";
-					default:
-						return "h5";
-				}
+				i = i > 5 ? 5 : i
+				i = i < 1 ? 1 : i;
+				return `h${i}`;
 			}
 		},
 		data() {
