@@ -208,7 +208,7 @@ const main = (async function () {
 		document.getElementById("favicon").setAttribute("href", stringTemplateParserQuery(json.favicon));
 	}
 
-	if (json.favicon) {
+	if (json.logo) {
 		json.logo = fixRelativePathRepo(window.repo, json.logo);
 	}
 
