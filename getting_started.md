@@ -11,13 +11,13 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
     "author":"Your Name",
     "logo": "https://place-hold.it/200x100?text=ShowTheDocs", //path to your logo (absolute or relative to your GitHub Repo)
     "downloadbutton": "http://github.com/zonaro/ShowTheDocs", //ommit if you want to hide download button
-    "printbutton": "Printe Me ;)", //ommit if you want to hide print button.
-    "searchplaceholder": "Find me :)", // the placeholder text used for searchbox on top navbar. Default is "search"
+    "printbutton": "Print Me", //ommit if you want to hide print button.
+    "searchplaceholder": "Find me", // the placeholder text used for searchbox on top navbar. Default is "search"
     "datelabel": "Updated", // the text used before any article date. Default is empty
     "infolabel": "Info", // the text used as label on any info alert. Default is "Info"
     "warninglabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
     "dangerlabel": "Danger", // the text used as label on any danger alert. Default is "Danger"
-    "viewraw": "Show File",// the text of file links, ommit if you want to hide
+    "viewraw": "Show File",// the text of file links (contentfile and aftercontentfile), ommit this property if you want to hide file links
     "social": [ // generate top navbar and footer icons with links
         {
             "name": "Github",
