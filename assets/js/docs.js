@@ -27,8 +27,8 @@ function fixRelativePathRepo(repo, relative) {
 	relative = relative.split(docBase).join("");
 	if (relative.isNotBlank() && repo.isNotBlank() && relative.isRelativeURL()) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
+		relative = 'https://' + relative.split("/").filter((i) =>  p > 0  && i != null && i != '').join("/");
 	}
-	relative = relative.split("/").filter((i,p) => p > 0 && i != null && i != '').join("/");
 	relative = relative.ifBlank("javascript:void(0);");
 	console.log('URL', relative);
 	return relative;
