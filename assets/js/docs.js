@@ -21,7 +21,6 @@ String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() 
 const docBase = location.origin + location.pathname;
 
 function fixRelativePathRepo(repo, relative) {
-	debugger;
 	repo = repo || window.repo || "";
 	relative = relative || "";
 	relative = relative.split(docBase).join("");
@@ -357,7 +356,7 @@ const main = (async function () {
 					element.href = fixRelativePathRepo(window.repo, element.href);
 				});
 				document.querySelector(".docs-content").querySelectorAll('img').forEach(function (element) {
-					element.src = fixRelativePathRepo(window.repo, element.href);
+					element.src = fixRelativePathRepo(window.repo, element.src);
 				});
 
 
