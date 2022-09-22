@@ -24,7 +24,7 @@ function fixRelativePathRepo(repo, relative) {
 	repo = repo || window.repo || "";
 	relative = relative || "";
 	relative = relative.split(docBase).join("");
-	if (relative.isNotBlank() && repo.isNotBlank() && relative.isRelativeURL() && !relative.startsWith("javascript:") && !relative.startsWith("#"))  {
+	if (relative.isNotBlank() && repo.isNotBlank() && relative.isRelativeURL() && !relative.startsWith("javascript:") && !relative.startsWith("#")) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
 		relative = 'https://' + relative.split("/").filter((i, p) => p > 0 && i != null && i != '').join("/");
 		console.log('Changing relative URL to', relative);
@@ -171,10 +171,11 @@ const main = (async function () {
 			parts[0] = '';
 			if (parts.length > 1) {
 				hash = parts.join("");
-				window.onload = function () {
-				document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
-					
-				}
+				setTimeout(function () {
+					document.getElementById(hash).scrollIntoView();
+				}, 500);
+
+
 			}
 		} else {
 			location.href = docBase + "#/zonaro/ShowTheDocs/main";
