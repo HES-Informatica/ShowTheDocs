@@ -18,11 +18,12 @@ String.prototype.isAbsoluteURL = function () {
 
 String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() == false; }
 
+const docBase = location.origin + location.pathname;
 
 function fixRelativePathRepo(repo, relative) {
 	repo = repo || window.repo || "";
 	relative = relative || null;
-	relative = relative.split("https://zonaro.github.io/ShowTheDocs/").join("");
+	relative = relative.split(docBase).join("");
 	if (relative != null && repo.isNotBlank() && relative.isRelativeURL()) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
 		console.warn("Changing relative url to", relative);
@@ -171,7 +172,7 @@ const main = (async function () {
 				document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
 			}
 		} else {
-			location.href = location.href + "#/zonaro/ShowTheDocs/main";
+			location.href = docBase + "#/zonaro/ShowTheDocs/main";
 		}
 	}
 
