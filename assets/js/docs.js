@@ -18,12 +18,12 @@ String.prototype.isAbsoluteURL = function () {
 
 String.prototype.isRelativeURL = function () { return `${this}`.isAbsoluteURL() == false; }
 
-const docBase = location.origin + location.pathname;
+location.leftpart = location.origin + location.pathname;
 
 function fixRelativePathRepo(repo, relative) {
 	repo = repo || window.repo || "";
 	relative = relative || "";
-	relative = relative.split(docBase).join("");
+	relative = relative.split(location.leftpart).join("");
 	if (relative.isNotBlank() && repo.isNotBlank() && relative.isRelativeURL() && !relative.startsWith("javascript:") && !relative.startsWith("#")) {
 		relative = `https://raw.githubusercontent.com/${repo}/${relative}`;
 		relative = 'https://' + relative.split("/").filter((i, p) => p > 0 && i != null && i != '').join("/");
@@ -173,7 +173,7 @@ const main = (async function () {
 				window.hash = parts.join("");
 			}
 		} else {
-			location.href = docBase + "#/zonaro/ShowTheDocs/main";
+			location.href = location.leftpart + "#/zonaro/ShowTheDocs/main";
 		}
 	}
 
@@ -356,7 +356,7 @@ const main = (async function () {
 				});
 				document.querySelector(".docs-content").querySelectorAll('img').forEach(function (element) {
 					element.src = fixRelativePathRepo(window.repo, element.src);
-				});			
+				});
 
 				document.getElementsByClassName("loadingio-spinner-eclipse-jxj4whxfvsh")[0].remove();
 
@@ -388,7 +388,21 @@ const main = (async function () {
 				i = i > 5 ? 5 : i
 				i = i < 1 ? 1 : i;
 				return `h${i}`;
-			}
+			},
+			sectionLink(id) {
+				id = id || "";
+				if (window.repo.isNotBlank()) {
+					if (id.isNotBlank())
+						return `${location.leftpart}#${window.repo}#${id}`;
+					return `${location.leftpart}#${window.repo}`;
+				} else if (window.basePath.isNotBlank()) {
+					if (id.isNotBlank())
+						return `${location.leftpart}?basePath=${window.basePath}#${id}`;
+					return `${location.leftpart}?basePath=${window.basePath}`;
+				}
+				return location.href;
+
+			},
 		},
 		data() {
 			return { data: json };

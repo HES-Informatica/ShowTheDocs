@@ -139,6 +139,7 @@
 								<i style="margin-right:15px" v-if="item.icon" class="text-primary"
 									:class="item.icon"></i>
 								<span v-if="item.title" v-html="item.title"></span>
+								<i v-if="data.viewlink" class="fa fa-link" :data-copylink="sectionLink(fixId(item.id))"></i>
 							</component>
 							<small v-if="item.date && item.date != ''">{{data.datelabel}} {{item.date}}
 								<br />
