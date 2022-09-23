@@ -131,7 +131,6 @@
 			<div class="docs-content">
 
 				<div class="container">
-
 					<article v-for="item in data.content" class="docs-article" v-bind:id="'section-' + fixId(item.id)">
 						<header class="docs-header">
 							<component :is="headerType(item.id)"
