@@ -18,6 +18,7 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
     "warninglabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
     "dangerlabel": "Danger", // the text used as label on any danger alert. Default is "Danger"
     "viewraw": "Show File",// the text of file links (contentfile and aftercontentfile), ommit this property if you want to hide file links
+    "copydialog": "CTRL+C to copy link",//  the text of copy dialog (for section anchors), ommit this property if you want to disable copy dialog and hide link icon
     "social": [ // generate top navbar and footer icons with links
         {
             "name": "Github",

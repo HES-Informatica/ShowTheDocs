@@ -12,7 +12,7 @@
     "logo": "https://place-hold.it/200x100?text=ShowTheDocs",
     "downloadbutton": "http://github.com/zonaro/ShowTheDocs",
     "viewraw": "See the original file",
-    "viewlink": true,
+    "copydialog": "Press CTRL+C to Copy",
     "content": [
         {
             "id": "1",
