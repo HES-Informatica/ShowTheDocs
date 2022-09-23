@@ -138,8 +138,8 @@
 								:class="{'docs-heading': (headerType(item.id) =='h1'), 'section-heading': (headerType(item.id) =='h2') }">
 								<i style="margin-right:15px" v-if="item.icon" class="text-primary"
 									:class="item.icon"></i>
-								<span v-if="item.title" v-html="item.title"></span>
-								<small v-if="data.viewlink"> <i class="fa fa-link"
+								<span v-if="item.title" v-html="item.title"></span>&nbsp;
+								<small v-if="data.viewlink"> <i style="color: gray;font-size: 70%;" class="fa fa-link"
 										:data-copylink="sectionLink(fixId(item.id))"></i></small>
 							</component>
 							<small v-if="item.date && item.date != ''">{{data.datelabel}} {{item.date}}
