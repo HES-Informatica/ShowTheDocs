@@ -140,7 +140,7 @@
 									:class="item.icon"></i>
 								<span v-if="item.title" v-html="item.title"></span>&nbsp;
 								<small v-if="data.viewlink"> <i style="color: gray;font-size: 70%;" class="fa fa-link"
-										:data-copylink="sectionLink(fixId(item.id))"></i></small>
+										:data-copylink="sectionLink(fixId(item.id))" :data-text="data.viewlink" onclick="prompt(this.getAttribute('data-viewlink'),this.getAttribute('data-copylink'))"></i></small>
 							</component>
 							<small v-if="item.date && item.date != ''">{{data.datelabel}} {{item.date}}
 								<br />
@@ -151,9 +151,7 @@
 						<section
 							:class="{'docs-intro': (headerType(item.id) =='h1'), 'docs-section': (headerType(item.id) =='h2') }"
 							v-bind:id="'item-' + fixId(item.id)">
-							&nbsp;
-								<small v-if="data.viewlink"> <i style="color: gray;font-size: 70%;" class="fa fa-link"
-										:data-copylink="itemLink(fixId(item.id))"></i></small>
+						 
 							<p v-html="item.content"></p>
 							<small v-if="data.viewraw && item.contentfile"><a :href="item.contentfile"
 									target="_blank">{{data.viewraw}}</a> </small>
