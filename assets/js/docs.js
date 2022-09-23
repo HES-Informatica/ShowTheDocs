@@ -389,8 +389,11 @@ const main = (async function () {
 				i = i < 1 ? 1 : i;
 				return `h${i}`;
 			},
-			sectionLink(id) {
+			sectionLink(type,id) {
 				id = id || "";
+				if (id.isNotBlank()) {
+					id = `${type}-${id}`
+				}
 				if (window.repo.isNotBlank()) {
 					if (id.isNotBlank())
 						return `${location.leftpart}#${window.repo}#${id}`;
