@@ -139,7 +139,7 @@
 								<i style="margin-right:15px" v-if="item.icon" class="text-primary"
 									:class="item.icon"></i>
 								<span v-if="item.title" v-html="item.title"></span>&nbsp;
-								<small v-if="data.copydialog"> <i style="color: gray;font-size: 70%;" class="fa fa-link"
+								<small v-if="data.copydialog"> <i style="cursor:pointer;color: gray;font-size: 70%;" class="fa fa-link"
 										:data-copylink="sectionLink(fixId(item.id))" :data-text="data.copydialog" onclick="prompt(this.getAttribute('data-copydialog'),this.getAttribute('data-copylink'))"></i></small>
 							</component>
 							<small v-if="item.date && item.date != ''">{{data.datelabel}} {{item.date}}
