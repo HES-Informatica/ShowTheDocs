@@ -389,7 +389,8 @@ const main = (async function () {
 				i = i < 1 ? 1 : i;
 				return `h${i}`;
 			},
-			sectionLink(type,id) {
+		
+			createLink(type,id) {
 				id = id || "";
 				if (id.isNotBlank()) {
 					id = `${type}-${id}`
@@ -406,6 +407,12 @@ const main = (async function () {
 				return location.href;
 
 			},
+			sectionLink(id) {
+				return this.createLink('section', id);
+			},
+			itemLink(id) {
+				return this.createLink('item', id);
+			}
 		},
 		data() {
 			return { data: json };
