@@ -151,6 +151,9 @@
 						<section
 							:class="{'docs-intro': (headerType(item.id) =='h1'), 'docs-section': (headerType(item.id) =='h2') }"
 							v-bind:id="'item-' + fixId(item.id)">
+							&nbsp;
+								<small v-if="data.viewlink"> <i style="color: gray;font-size: 70%;" class="fa fa-link"
+										:data-copylink="itemLink(fixId(item.id))"></i></small>
 							<p v-html="item.content"></p>
 							<small v-if="data.viewraw && item.contentfile"><a :href="item.contentfile"
 									target="_blank">{{data.viewraw}}</a> </small>
