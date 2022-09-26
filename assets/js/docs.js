@@ -258,7 +258,8 @@ const main = (async function () {
 					if (alert.contentfile) {
 						alert.contentfile = fixRelativePathRepo(window.repo, alert.contentfile);
 						alert.content = await getText(alert.contentfile, alert.content);
-					}
+					}					
+					alert.type = alert.type || 'info'
 					alert.content = stringTemplateParserQuery(marked.parse(alert.content || ""));
 				});
 
