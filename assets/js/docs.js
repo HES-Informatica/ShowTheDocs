@@ -253,14 +253,15 @@ const main = (async function () {
 			if (item.aftercontent)
 				item.aftercontent = stringTemplateParserQuery(marked.parse(item.aftercontent || ""));
 
-			if (item.warning)
-				item.warning = stringTemplateParserQuery(marked.parse(item.warning || ""));
+			if (item.alerts)
+				await item.alerts.forEach(async alert => {
+					if (alert.contentfile) {
+						alert.contentfile = fixRelativePathRepo(window.repo, alert.contentfile);
+						alert.content = await getText(alert.contentfile, alert.content);
+					}
+					alert.content = stringTemplateParserQuery(marked.parse(alert.content || ""));
+				});
 
-			if (item.info)
-				item.info = stringTemplateParserQuery(marked.parse(item.info || ""));
-
-			if (item.danger)
-				item.danger = stringTemplateParserQuery(marked.parse(item.danger || ""));
 
 
 			if (item.lightbox)
@@ -389,8 +390,8 @@ const main = (async function () {
 				i = i < 1 ? 1 : i;
 				return `h${i}`;
 			},
-		
-			createLink(type,id) {
+
+			createLink(type, id) {
 				id = id || "";
 				if (id.isNotBlank()) {
 					id = `${type}-${id}`

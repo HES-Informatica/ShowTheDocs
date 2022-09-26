@@ -171,11 +171,11 @@
 
 
 							<template v-if="item.alerts" v-for="alert in item.alerts">
-								<div :class="'callout-block-' + (alert.type || 'info')" class="callout-block   me-1">
+								<div :class="'callout-block-' + (alert.type || 'info')" class="callout-block me-1">
 									<div class="content">
 										<h4 class="callout-title">
 											<span class="callout-icon-holder">
-												<i class="fa fa-solid fa-circle-xmark"></i>
+												<i class="fa fa-solid" :class="alert.icon || 'fa-info-circle'"></i>
 											</span>
 											&nbsp;
 											{{alert.label || (alert.type || 'info') }}
