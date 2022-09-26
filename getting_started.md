@@ -57,13 +57,13 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
         },
         {
             "id": "1.1", // set the id with sublevels to indicate that this article belongs to the previous article        
-            "title": "Sublevel 1",           
+            "title": "Sublevel 1.1",           
             "content": "Lorem *Ipsum*...", //you can also use content instead of contentfile. Accepts markdown
             "aftercontent": "Lorem **Ipsum**..." //you can also use aftercontent instead of aftercontentfile. Accepts markdown
         },
         {
             "id": "1.1.1", // set the id with sublevels to indicate that this article belongs to the previous article         
-            "title": "Sublevel of sublevel"  
+            "title": "Sublevel 1.1.1"  
         },  
         {
             "id": "2",        
