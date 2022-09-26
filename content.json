@@ -20,16 +20,13 @@
             "title": "Show The Docs",
             "date": "05/05/2022",
             "contentfile": "README.md"
-          
         },
         {
             "id": "1.1",
             "icon": "fas fa-paper-plane",
             "title": "Getting Started",
             "date": "22/09/2022",
-            "contentfile": "getting_started.md",
-            "success": "You can copy the content of this json to perform the test"
-
+            "contentfile": "getting_started.md"
         },
         {
             "id": "1.2",
