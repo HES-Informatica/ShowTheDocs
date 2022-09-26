@@ -34,8 +34,18 @@
             "date": "22/09/2022",
             "title": "Generate a documentation",
             "content": "Now just go to http://zonaro.github.io/ShowTheDocs/#/YourUserName/YourRepo/DocBranch to see the generated documentation.",
-            "info": "You can also, specify the `basePath` parameter with absolute path to your json istead of /#/YourUserName/YourRepo/DocBranch.",
-            "warning": "When using the `basePath` parameter, all image and link paths in this json must be absolute."
+            "alerts": [
+                {
+                    "type": "Info",
+                    "label": "Tip",
+                    "content": "You can also, specify the `basePath` parameter with absolute path to your json istead of /#/YourUserName/YourRepo/DocBranch."
+                },
+                {
+                    "type": "warning",
+                    "label": "Warn",
+                    "content": "When using the `basePath` parameter, all image and link paths in this json must be absolute."
+                }
+            ]
         }
     ]
 }

@@ -138,8 +138,10 @@
 								<i style="margin-right:15px" v-if="item.icon" class="text-primary"
 									:class="item.icon"></i>
 								<span v-if="item.title" v-html="item.title"></span>&nbsp;
-								<small v-if="data.copydialog"> <i style="cursor:pointer;color: gray;font-size: 70%;" class="fa fa-link"
-										:data-copylink="sectionLink(fixId(item.id))" :data-text="data.copydialog" onclick="prompt(this.getAttribute('data-text'),this.getAttribute('data-copylink'))"></i></small>
+								<small v-if="data.copydialog"> <i style="cursor:pointer;color: gray;font-size: 70%;"
+										class="fa fa-link" :data-copylink="sectionLink(fixId(item.id))"
+										:data-text="data.copydialog"
+										onclick="prompt(this.getAttribute('data-text'),this.getAttribute('data-copylink'))"></i></small>
 							</component>
 							<small v-if="item.date && item.date != ''">{{data.datelabel}} {{item.date}}
 								<br />
@@ -150,7 +152,7 @@
 						<section
 							:class="{'docs-intro': (headerType(item.id) =='h1'), 'docs-section': (headerType(item.id) =='h2') }"
 							v-bind:id="'item-' + fixId(item.id)">
-						 
+
 							<p v-html="item.content"></p>
 							<small v-if="data.viewraw && item.contentfile"><a :href="item.contentfile"
 									target="_blank">{{data.viewraw}}</a> </small>
@@ -166,65 +168,24 @@
 
 							</figure>
 
-							<div v-if="item.danger && item.danger != ''"
-								class="callout-block callout-block-danger me-1">
-								<div class="content">
-									<h4 class="callout-title">
-										<span class="callout-icon-holder">
-											<i class="fa fa-solid fa-circle-xmark"></i>
-										</span>
-										&nbsp;
-										{{data.dangerlabel || 'Danger'}}
-									</h4>
-									<p v-html="item.danger"></p>
-								</div>
-								<!--//content-->
-							</div>
 
-							<div v-if="item.warning && item.warning != ''"
-								class="callout-block callout-block-warning me-1">
-								<div class="content">
-									<h4 class="callout-title">
-										<span class="callout-icon-holder">
-											<i class="fas fa-exclamation-triangle"></i>
-										</span>
-										&nbsp;
-										{{data.warninglabel || 'Warning'}}
-									</h4>
-									<p v-html="item.warning"></p>
-								</div>
-								<!--//content-->
-								<br />
 
-							</div>
-
-							<div v-if="item.info && item.info != ''" class="callout-block callout-block-info me-1">
-								<div class="content">
-									<h4 class="callout-title">
-										<span class="callout-icon-holder">
-											<i class="fas fa-circle-info"></i>
-										</span>
-										&nbsp;
-										{{data.infolabel || 'Info'}}
-									</h4>
-									<p v-html="item.info"></p>
+							<template v-if="item.alerts" v-for="alert in item.alerts">
+								<div :class="'callout-block-' + (alert.type || 'info')" class="callout-block   me-1">
+									<div class="content">
+										<h4 class="callout-title">
+											<span class="callout-icon-holder">
+												<i class="fa fa-solid fa-circle-xmark"></i>
+											</span>
+											&nbsp;
+											{{alert.label || (alert.type || 'info') }}
+										</h4>
+										<p v-html="alert.content"></p>
+									</div>
+									<!--//content-->
 								</div>
-								<!--//content-->
-							</div>
+							</template>
 
-							<div v-if="item.success && item.success != ''" class="callout-block callout-block-success me-1">
-								<div class="content">
-									<h4 class="callout-title">
-										<span class="callout-icon-holder">
-										 <i class="fa fa-check-circle" aria-hidden="true"></i>
-										</span>
-										&nbsp;
-										{{data.successlabel || 'Success'}}
-									</h4>
-									<p v-html="item.success"></p>
-								</div>
-								<!--//content-->
-							</div>
 
 							<p v-html="item.aftercontent"></p>
 							<small v-if="data.viewraw && item.aftercontentfile"><a :href="item.aftercontentfile"
@@ -253,8 +214,8 @@
 				<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
 				<small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a
 						class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for
-					developers. Developed by  <a
-					class="theme-link" href="http://github.com/zonaro" target="_blank">Zonaro</a></small>
+					developers. Developed by <a class="theme-link" href="http://github.com/zonaro"
+						target="_blank">Zonaro</a></small>
 
 
 			</div>
