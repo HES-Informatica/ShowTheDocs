@@ -131,7 +131,7 @@ window.search = function (filter, keep) {
 			}
 	}
 	if (!keep) {
-		window.find(x.children[0].value, false, false, true, false, true, true);
+		window.find(filter, false, false, true, false, true, true);
 	}
 
 }
