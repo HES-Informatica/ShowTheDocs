@@ -35,10 +35,19 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
             "date": "05/05/2022",
             "contentfile": "/README.md", // absolute url or relative to your GitHub Repo
             "aftercontentfile":"/LICENSE", // absolute url or relative to your GitHub Repo
-            "info": "this is a info alert",
-            "danger": "this is a danger alert",
-            "warning": "this is a warning alert",
-            "success": "this is a success alert",
+            "alerts": [ // alert blocks
+                {
+                    "type": "info", //alert type (info,warning,danger,success)
+                    "label": "Tip", //alert label
+                    "content":  "Lorem *Ipsum*..." //the alert content. Accepts markdown
+                },
+                {
+                    "type": "warning", //alert type (info,warning,danger,success)
+                    "label": "wanr", //alert label
+                    "contentfile":  "/my_alert.md" // absolute url or relative to your GitHub Repo
+                }                   
+            ],
+     
             "lightbox": [ // creates a carroussel with images after content and before alerts and aftercontent
                 {
                     "image": "/img/image.png", // image path, absolute or relative to your GitHub Repo
