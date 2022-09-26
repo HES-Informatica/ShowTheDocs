@@ -27,7 +27,9 @@
             "icon": "fas fa-paper-plane",
             "title": "Getting Started",
             "date": "22/09/2022",
-            "contentfile": "getting_started.md"
+            "contentfile": "getting_started.md",
+            "success": "You can copy the content of this json to perform the test"
+
         },
         {
             "id": "1.2",
