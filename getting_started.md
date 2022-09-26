@@ -13,11 +13,7 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
     "downloadbutton": "http://github.com/zonaro/ShowTheDocs", //ommit if you want to hide download button
     "printbutton": "Print Me", //ommit if you want to hide print button.
     "searchplaceholder": "Find me", // the placeholder text used for searchbox on top navbar. Default is "search"
-    "datelabel": "Updated", // the text used before any article date. Default is empty
-    "infolabel": "Info", // the text used as label on any info alert. Default is "Info"
-    "warninglabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
-    "successlabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
-    "dangerlabel": "Success", // the text used as label on any success alert. Default is "Success"
+    "datelabel": "Updated", // the text used before any article date. Default is empty   
     "viewraw": "Show File",// the text of file links (contentfile and aftercontentfile), ommit this property if you want to hide file links
     "copydialog": "CTRL+C to copy link",//  the text of copy dialog (for section anchors), ommit this property if you want to disable copy dialog and hide link icon
     "social": [ // generate top navbar and footer icons with links
