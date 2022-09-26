@@ -101,7 +101,7 @@ function stringTemplateParserQuery(expression) {
 
 
 window.search = function (filter, keep) {
-
+	keep = keep || false;
 	var root, articles, i, txtValue;
 	filter = filter.toUpperCase();
 	root = document.getElementById("app");
