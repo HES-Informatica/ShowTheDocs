@@ -171,14 +171,14 @@
 
 
 							<template v-if="item.alerts" v-for="alert in item.alerts">
-								<div class="callout-block me-1" :class="'callout-block-' + (alert.type || 'info')" >
+								<div class="callout-block me-1" :class="'callout-block-' + (alert.type || 'info').toLowerCase()" >
 									<div class="content">
 										<h4 class="callout-title">
 											<span class="callout-icon-holder">
 												<i class="fa fa-solid" :class="alert.icon || 'fa-info-circle'"></i>
 											</span>
 											&nbsp;
-											{{alert.label || (alert.type || 'info') }}
+											{{alert.label || (alert.type || 'Info') }}
 										</h4>
 										<p v-html="alert.content"></p>
 									</div>
