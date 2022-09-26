@@ -16,7 +16,8 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
     "datelabel": "Updated", // the text used before any article date. Default is empty
     "infolabel": "Info", // the text used as label on any info alert. Default is "Info"
     "warninglabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
-    "dangerlabel": "Danger", // the text used as label on any danger alert. Default is "Danger"
+    "successlabel": "Warning", // the text used as label on any warning alert. Default is "Warning"
+    "dangerlabel": "Success", // the text used as label on any success alert. Default is "Success"
     "viewraw": "Show File",// the text of file links (contentfile and aftercontentfile), ommit this property if you want to hide file links
     "copydialog": "CTRL+C to copy link",//  the text of copy dialog (for section anchors), ommit this property if you want to disable copy dialog and hide link icon
     "social": [ // generate top navbar and footer icons with links
@@ -32,11 +33,12 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
             "icon": "fas fa-file", // any fontAwesome 6 FREE Icon
             "title": "Introduction", // article title
             "date": "05/05/2022",
-            "contentfile": "/README.md", // absolute or relative to your GitHub Repo
-            "aftercontentfile":"/LICENSE", // absolute or relative to your GitHub Repo
+            "contentfile": "/README.md", // absolute url or relative to your GitHub Repo
+            "aftercontentfile":"/LICENSE", // absolute url or relative to your GitHub Repo
             "info": "this is a info alert",
             "danger": "this is a danger alert",
             "warning": "this is a warning alert",
+            "success": "this is a success alert",
             "lightbox": [ // creates a carroussel with images after content and before alerts and aftercontent
                 {
                     "image": "/img/image.png", // image path, absolute or relative to your GitHub Repo

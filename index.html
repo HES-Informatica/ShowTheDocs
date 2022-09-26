@@ -212,6 +212,20 @@
 								<!--//content-->
 							</div>
 
+							<div v-if="item.success && item.success != ''" class="callout-block callout-block-info me-1">
+								<div class="content">
+									<h4 class="callout-title">
+										<span class="callout-icon-holder">
+										 <i class="fa fa-check-circle" aria-hidden="true"></i>
+										</span>
+										&nbsp;
+										{{data.successlabel || 'Success'}}
+									</h4>
+									<p v-html="item.success"></p>
+								</div>
+								<!--//content-->
+							</div>
+
 							<p v-html="item.aftercontent"></p>
 							<small v-if="data.viewraw && item.aftercontentfile"><a :href="item.aftercontentfile"
 									target="_blank">{{data.viewraw}}</a> </small>
