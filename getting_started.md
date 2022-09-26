@@ -38,12 +38,13 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
             "alerts": [ // alert blocks
                 {
                     "type": "info", //alert type (info,warning,danger,success). Default is info
-                    "label": "Tip", //alert label, default is defined by type label property on root (infolabel,warninglabel,dangerlabel,successlabel). Use type if ommitted
-                    "content":  "Lorem *Ipsum*..." //the alert content. Accepts markdown
+                    "label": "Tip", //alert label, default is defined by type label property on root (infolabel,warninglabel,dangerlabel,successlabel). Depends on alert.type if ommitted
+                    "content":  "Lorem *Ipsum*...", //the alert content. Accepts markdown
+                    "icon":"fa fa-info-circle" //alert icon used before label, any FontAwesome 6 FREE Icon. Default depends on alert.type property.
                 },
                 {
                     "type": "warning", //alert type (info,warning,danger,success). Default is info
-                    "label": "Warn", //alert label, default is defined by type label property on root (infolabel,warninglabel,dangerlabel,successlabel). Use type if ommitted
+                    "label": "Warn", //alert label, default is defined by type label property on root (infolabel,warninglabel,dangerlabel,successlabel). Depends on alert.type if ommitted
                     "contentfile":  "/my_alert.md" // absolute url or relative to your GitHub Repo
                 }                   
             ],
