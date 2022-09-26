@@ -290,7 +290,7 @@ const main = (async function () {
 					x.addEventListener('submit', function (event) {
 						event.preventDefault();
 						window.search(x.children[0].value, false);
-						window.find(x.children[0].value, false, true, true, false, true, true);
+						window.find(x.children[0].value, false, false, true, false, true, true);
 					});
 				});
 
