@@ -414,8 +414,7 @@ const main = (async function () {
 			getLabelByType(type) {
 				type = (type || 'info').toLowerCase();
 				switch (type) {
-					case "warning":
-					case "warn":
+					case "warning":				
 						return window.documentationData.warninglabel || "Warning";
 					case "danger":
 						return window.documentationData.dangerlabel || "Danger";
@@ -423,6 +422,20 @@ const main = (async function () {
 						return window.documentationData.successlabel || "Success";
 					default:
 						return window.documentationData.infolabel || "Info";
+				}
+			},
+			getIconByType(type) {
+				type = (type || 'info').toLowerCase();
+				switch (type) {
+					case "warning":				 
+						return "fa fa-solid fa-exclamation-triangle";
+					case "danger":
+						return "fa fa-solid fa-xmark-circle";
+					case "success":
+						return "fa fa-solid fa-check-circle";
+					default:
+						return "fa fa-solid fa-info-circle";
+						
 				}
 			}
 		},
