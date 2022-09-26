@@ -130,8 +130,13 @@ window.search = function (filter, keep) {
 				}
 			}
 	}
+	if (!keep) {
+		window.find(x.children[0].value, false, false, true, false, true, true);
+	}
 
 }
+
+
 
 /* ===== Responsive Sidebar ====== */
 function responsiveSidebar() {
@@ -258,7 +263,7 @@ const main = (async function () {
 					if (alert.contentfile) {
 						alert.contentfile = fixRelativePathRepo(window.repo, alert.contentfile);
 						alert.content = await getText(alert.contentfile, alert.content);
-					}					
+					}
 					alert.type = alert.type || 'info'
 					alert.content = stringTemplateParserQuery(marked.parse(alert.content || ""));
 				});
@@ -290,7 +295,6 @@ const main = (async function () {
 					x.addEventListener('submit', function (event) {
 						event.preventDefault();
 						window.search(x.children[0].value, false);
-						window.find(x.children[0].value, false, false, true, false, true, true);
 					});
 				});
 
@@ -415,7 +419,7 @@ const main = (async function () {
 			getLabelByType(type) {
 				type = (type || 'info').toLowerCase();
 				switch (type) {
-					case "warning":				
+					case "warning":
 						return window.documentationData.warninglabel || "Warning";
 					case "danger":
 						return window.documentationData.dangerlabel || "Danger";
@@ -428,7 +432,7 @@ const main = (async function () {
 			getIconByType(type) {
 				type = (type || 'info').toLowerCase();
 				switch (type) {
-					case "warning":				 
+					case "warning":
 						return "fa fa-solid fa-exclamation-triangle";
 					case "danger":
 						return "fa fa-solid fa-xmark-circle";
@@ -436,7 +440,7 @@ const main = (async function () {
 						return "fa fa-solid fa-check-circle";
 					default:
 						return "fa fa-solid fa-info-circle";
-						
+
 				}
 			}
 		},
