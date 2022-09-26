@@ -14,6 +14,10 @@ Generate documentation using `ShowTheDocs!` it's pretty easy. Create a GitHub re
     "printbutton": "Print Me", //ommit if you want to hide print button.
     "searchplaceholder": "Find me", // the placeholder text used for searchbox on top navbar. Default is "search"
     "datelabel": "Updated", // the text used before any article date. Default is empty   
+    "warninglabel": "Warn", // the text used as default warning label. Default is "Warning"   
+    "successlabel": "OK", // the text used as default success label. Default is "Success"   
+    "dangerlabel": "Caution", // the text used as default danger label. Default is "Danger"   
+    "infolabel": "Tip", // the text used as default info label. Default is "Info"   
     "viewraw": "Show File",// the text of file links (contentfile and aftercontentfile), ommit this property if you want to hide file links
     "copydialog": "CTRL+C to copy link",//  the text of copy dialog (for section anchors), ommit this property if you want to disable copy dialog and hide link icon
     "social": [ // generate top navbar and footer icons with links
