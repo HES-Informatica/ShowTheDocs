@@ -411,8 +411,19 @@ const main = (async function () {
 			sectionLink(id) {
 				return this.createLink('section', id);
 			},
-			itemLink(id) {
-				return this.createLink('item', id);
+			getLabelByType(type) {
+				type = (type || 'info').toLowerCase();
+				switch (type) {
+					case "warning":
+					case "warn":
+						return window.documentationData.warninglabel || "Warning";
+					case "danger":
+						return window.documentationData.dangerlabel || "Danger";
+					case "success":
+						return window.documentationData.successlabel || "Success";
+					default:
+						return window.documentationData.infolabel || "Info";
+				}
 			}
 		},
 		data() {

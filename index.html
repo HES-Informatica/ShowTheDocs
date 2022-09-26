@@ -177,7 +177,7 @@
 												<i class="fa fa-solid" :class="alert.icon || 'fa-info-circle'"></i>
 											</span>
 											&nbsp;
-											{{alert.label || (alert.type || 'Info') }}
+											{{alert.label || getLabelByType(alert.type) }}
 										</h4>
 										<p v-html="alert.content"></p>
 									</div>
