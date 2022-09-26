@@ -171,7 +171,7 @@
 
 
 							<template v-if="item.alerts" v-for="alert in item.alerts">
-								<div :class="'callout-block-' + (alert.type || 'info')" class="callout-block me-1">
+								<div class="callout-block me-1" :class="'callout-block-' + (alert.type || 'info')" >
 									<div class="content">
 										<h4 class="callout-title">
 											<span class="callout-icon-holder">
