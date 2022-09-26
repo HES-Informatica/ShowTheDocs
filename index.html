@@ -168,10 +168,9 @@
 
 							</figure>
 
-
-
 							<template v-if="item.alerts" v-for="alert in item.alerts">
-								<div class="callout-block me-1" :class="'callout-block-' + (alert.type || 'info').toLowerCase()" >
+								<div class="callout-block me-1"
+									:class="'callout-block-' + (alert.type || 'info').toLowerCase()">
 									<div class="content">
 										<h4 class="callout-title">
 											<span class="callout-icon-holder">
