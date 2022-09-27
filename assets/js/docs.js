@@ -416,8 +416,8 @@ const main = (async function () {
 				}
 				if (window.repo.isNotBlank()) {
 					if (id.isNotBlank())
-						return `${location.leftpart}#${window.repo}#${id}`;
-					return `${location.leftpart}#${window.repo}`;
+						return `${location.leftpart}#/${window.repo}#${id}`;
+					return `${location.leftpart}#/${window.repo}`;
 				} else if (window.basePath.isNotBlank()) {
 					if (id.isNotBlank())
 						return `${location.leftpart}?basePath=${window.basePath}#${id}`;
