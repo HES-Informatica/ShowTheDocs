@@ -183,6 +183,21 @@ const main = (async function () {
 	}
 
 	if (window.repo.isNotBlank()) {
+
+		let parts = window.repo.split("/");
+		switch (parts.length) {
+			case 3:
+				//do nothing, its okay	
+				break;
+			case 2:
+				parts.push("main");
+			case 1:
+				parts = ["zonaro", "showTheDocs", "main"];
+			default:
+				parts = parts.splice(0, 3);
+				break;
+		}
+		window.repo = parts.join("/");
 		window.basePath = fixRelativePathRepo(window.repo, "content.json");
 		console.log('Using GitHub Repo', window.repo);
 	}
