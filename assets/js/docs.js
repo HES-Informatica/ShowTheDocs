@@ -183,7 +183,6 @@ const main = (async function () {
 	}
 
 	if (window.repo.isNotBlank()) {
-
 		let parts = window.repo.split("/");
 		switch (parts.length) {
 			case 3:
