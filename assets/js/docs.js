@@ -182,14 +182,15 @@ const main = (async function () {
 		}
 	}
 
-	if (window.repo.isNotBlank()) {	 
+	if (window.repo.isNotBlank()) {
 		let parts = window.repo.split("/").filter((x) => x.isNotBlank() && x != "#");
-		switch (parts.length) {			
+		switch (parts.length) {
 			case 2:
 				parts.push("main");
 				break;
-			case 1:			
+			case 1:
 				parts = ["zonaro", "showTheDocs", "main"];
+				break;
 			default:
 				parts = parts.slice(0, 3);
 				break;
