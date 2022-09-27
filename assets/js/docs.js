@@ -194,7 +194,7 @@ const main = (async function () {
 			case 1:
 				parts = ["zonaro", "showTheDocs", "main"];
 			default:
-				parts = parts.splice(0, 3);
+				parts = parts.slice(0, 3);
 				break;
 		}
 		window.repo = parts.join("/");
