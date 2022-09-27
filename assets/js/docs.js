@@ -183,6 +183,7 @@ const main = (async function () {
 	}
 
 	if (window.repo.isNotBlank()) {
+		debugger;
 		let parts = window.repo.split("/").filter((x) => x.isNotBlank() && x != "#");
 		switch (parts.length) {
 			case 3:
